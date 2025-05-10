@@ -1,12 +1,7 @@
 if __name__ == "__main__":
-    print("###################")
-    print("#1# #3# # # # # # #")
-    print("#2# #4# # # # # # #")
-    print("#5# # # # # # # # #")
-    print("#7# #8# # # # # # #")
-    print("# # # # # # # # # #")
-    print("# # # # # # #1# # #")
-    print("# # #4# # # # # # #")
-    print("# # # # # # # #6# #")
-    print("#6# # # # # # # # #")
-    print("###################")
+    print("SUDOKU \n \n \n")
+    print("1. Zagraj")
+    print("2. Jak grać?")
+    print("3. Ustawienia")
+    print("4. Zakończ")
+    
