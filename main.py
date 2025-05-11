@@ -4,4 +4,4 @@ if __name__ == "__main__":
     print("2. Jak grać?")
     print("3. Ustawienia")
     print("4. Zakończ")
-    
+    choice = int(input("Wybierz opcję: "))
