@@ -22,23 +22,32 @@ bg_colors = {
         "reset":   0
     }
 
+def print_flavoured_text(text, color="reset", background="reset", end = "\n", sep = " ", flush = True):
+    """
+    Print text with a specified color and background color. After printing, the color and background are reset to default.
+    """
+    if color not in text_colors:
+        raise ValueError(f"Invalid color: {color}. Available colors are: {', '.join(text_colors.keys())}")
+    if background not in bg_colors:
+        raise ValueError(f"Invalid background color: {background}. Available colors are: {', '.join(bg_colors.keys())}")
+    print(f"\033[{bg_colors[background]}m{text}\033[0m", end=end, sep=sep, flush=flush)
 
-def print_colored_background(text, background="black"):
+def print_colored_background(text, background="black", end = "\n", sep = " ", flush = True):
     """
     Print text with a specified background color. After printing, the background color is reset to default.
     """ 
     if background not in bg_colors:
         raise ValueError(f"Invalid background color: {background}. Available colors are: {', '.join(bg_colors.keys())}")
-    print(f"\033[{bg_colors[background]}m{text}\033[0m")
+    print(f"\033[{bg_colors[background]}m{text}\033[0m", end=end, sep=sep, flush=flush)
 
 
-def print_colored_text(text, color="reset"):
+def print_colored_text(text, color="reset", end = "\n", sep = " ", flush = True):
     """
     Print text in a specified color. After printing, the color is reset to default.
     """ 
     if color not in text_colors:
         raise ValueError(f"Invalid color: {color}. Available colors are: {', '.join(text_colors.keys())}")
-    print(f"\033[{text_colors[color]}m{text}\033[0m")
+    print(f"\033[{text_colors[color]}m{text}\033[0m", end=end, sep=sep, flush=flush)
 
 
 def change_text_color(color="reset"):
@@ -61,20 +70,23 @@ def change_background_color(background="reset"):
 
 if __name__ == "__main__":
     # Example usage
-    print_colored_text("Hello, World!", "red")
-    print_colored_text("Hello, World!", "green")
-    print_colored_text("Hello, World!", "blue")
-    print_colored_text("Hello, World!", "yellow")
-    print_colored_text("Hello, World!", "magenta")
-    print_colored_text("Hello, World!", "cyan")
-    print_colored_text("Hello, World!", "white")
-    print_colored_text("Hello, World!", "black")
-    print("elo")
+    # print_colored_text("Hello, World!", "red")
+    # print_colored_text("Hello, World!", "green")
+    # print_colored_text("Hello, World!", "blue")
+    # print_colored_text("Hello, World!", "yellow")
+    # print_colored_text("Hello, World!", "magenta")
+    # print_colored_text("Hello, World!", "cyan")
+    # print_colored_text("Hello, World!", "white")
+    # print_colored_text("Hello, World!", "black")
+    # print("elo")
    
 
-    print("elo")
-    change_text_color("red")
-    print("elo")
-    print_colored_background("Hello, World!", "red")
-    print_colored_background("Hello, World!", "green")
-    print_colored_background("Hello, World!", "blue")
+    # print("elo")
+    # change_text_color("red")
+    # print("elo")
+    # print_colored_background("Hello, World!", "red")
+    # print_colored_background("Hello, World!", "green")
+    # print_colored_background("Hello, World!", "blue")
+    # print_colored_background("Hello, World!", "reset")
+
+    print_flavoured_text("Hello, World!", "red", "green", end = "asd", flush = True)
