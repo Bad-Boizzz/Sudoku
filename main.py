@@ -1,41 +1,63 @@
 import sys
 import os
+import game
+from time import sleep
+# import settings
+# import instruction
+
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def print_mainmenu() -> int:
+    print("Gra, która pobudzi Twój umysł!")
+    sleep(1)
+    clear()
     print("SUDOKU \n \n \n")
     print("1. Zagraj")
     print("2. Jak grać?")
     print("3. Ustawienia")
     print("4. Zakończ")
+    
     choice = int(input("Wybierz opcję: "))
+    
     match choice:
+        #game start
         case 1:
-            os.system('cls')
-            #funkcja do rozpoczęcia gry
-            return 1
-            
-        case 2:
-            os.system('cls')
-            #instruction()
-            return 1
-            
-        case 3:
-            os.system('cls')
-            #settings()
+            clear()
+            game.game()
             return 1
         
-        case 4:
-            os.system('cls')
-            sys.exit()
+        #how to play    
+        case 2:
+            clear()
+            # instruction.instruction()
             return 1
-            
+        
+        #settings    
+        case 3:
+            #settings.settings()
+            clear()
+            return 1
+        
+        #game exit
+        case 4: 
+            clear()
+            sys.exit()   
+            return 1
+        
         case _:
-            os.system('cls')
+            clear()
             return 0
-            
-if __name__ == "__main__":
+        
+def main():
     while True:
         choice_result = print_mainmenu()
         if choice_result == 1:
             break
+
+            
+if __name__ == "__main__":
+    main()
         
         
