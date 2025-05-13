@@ -1,0 +1,58 @@
+{
+    "LanguagePackInfo": {
+        "Nazwa": "English",
+        "Wersja": "1.0.0",
+        "DataWydania": "13.05"
+    },
+    "graphicsPY": {},
+    "ui": {
+        "menu": {
+            "file": "File",
+            "edit": "Edit",
+            "view": "View",
+            "help": "Help"
+        },
+        "buttons": {
+            "ok": "OK",
+            "cancel": "Cancel",
+            "apply": "Apply"
+        },
+        "labels": {
+            "username": "Username",
+            "password": "Password"
+        }
+    },
+        "testLanguageManagerPY": {
+            "firstMessage": "Hello",
+            "programIntroduction": "Hello in program, I'm Andrej\\n the last person, the wonderful person. Agrest",
+            "actionMenu1": {
+                "actionMenuIntroduction": "Choose one option; Be aware, the cation may deceive you",
+                "actionMenuOption1": "Window",
+                "actionMenuOption2": "Door",
+                "actionMenuOption3": "Balcony",
+                "actionMenuOption4": "Back door",
+                "actionMenuOption5": "balcony window"
+            },
+            "actionMenuAfterOption1": {
+                "actionMenuIntroduction": "The window closed you cannot escape"
+            },
+            "actionMenuAfterOption2": {
+                "actionMenuIntroduction": "The door closed, you cannot escape"
+            },
+            "actionMenuAfterOption3": {
+                "actionMenuIntroduction": "The balocny has closed, you cannot escape"
+            },
+            "actionMenuAfterOption4": {
+                "actionMenuIntroduction": "the backdoor has opened, you escape in a hurrry!"
+            },
+            "actionMenuAfterOption5": {
+                "actionMenuIntroduction": "The balcony Window has closed, you cannot escape"
+            },
+            "deathMessagesGeneric": {
+                "deathMessage1": "You were killed",
+                "deathMessage2": "you dead",
+                "deathMessage3": "you for sure dead",
+                "deathMessage4": "wake up, you zesrałeś yourself"
+            }
+        }
+}   

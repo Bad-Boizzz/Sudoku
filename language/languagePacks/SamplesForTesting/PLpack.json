@@ -1,0 +1,70 @@
+{
+  
+   "LanguagePackInfo":
+   {
+         "Nazwa": "Polski",
+         "Wersja": "1.0.0",
+         
+         "DataWydania": "13.05.2025"
+   },
+   "graphicsPY":
+      {
+      },
+   "ui":
+   {
+      "menu":
+      {
+         "file": "Plik",
+         "edit": "Edycja",
+         "view": "Widok",
+         "help": "Pomoc"
+      },
+      "buttons":
+      {
+         "ok": "OK",
+         "cancel": "Anuluj",
+         "apply": "Zastosuj"
+      },
+      "labels":
+      {
+         "username": "Nazwa użytkownika",
+         "password": "Hasło"
+            
+      }
+   },
+   "testLanguageManagerPY":{
+      "firstMessage":"cześć",
+      "programIntroduction":"Witaj w programie, jestem Andrzej\n osoba ostatnia, osoba wspaniała. Agrest",
+      "actionMenu1":{
+            "actionMenuIntroduction":"Wybierz jedną z opcji, aby kontynuować; Uważaj mogą same już nazwy cię zwieść\n Wyjdź przez...",
+            "actionMenuOption1":"okno",
+            "actionMenuOption2":"drzwi",
+            "actionMenuOption3":"balkon",
+            "actionMenuOption4":"tylne drzwi",
+            "actionMenuOption5":"okno balkonowe"
+         },
+         "actionMenuAfterOption1":{
+            "actionMenuIntroduction":"Okno się zamknęło, nie możesz wyjść przez nie!"
+         },
+         "actionMenuAfterOption2":{
+            "actionMenuIntroduction":"Drzwi się zamknęły, nie możesz wyjść przez nie!"
+         },
+         "actionMenuAfterOption3":{
+            "actionMenuIntroduction":"Balkon się zamknął, nie możesz wyjść przez niego!"
+         },
+         "actionMenuAfterOption4":{
+            "actionMenuIntroduction":"Tylne drzwi się otworzyły, wychodzisz w pośpiechu!"
+         },
+         "actionMenuAfterOption5":{
+            "actionMenuIntroduction":"Okno balkonowe się zamknęło, nie możesz wyjść przez nie!"
+         },
+         "deathMessagesGeneric":{
+            "deathMessage1":"Zostałeś zamordowany przez nieznanego sprawcę!",
+            "deathMessage2":"Umarłeś z powodu nieznanego sprawcy!",
+            "deathMessage3":"Zostałeś pozbawiony życia przez nieznanego sprawcę!",
+            "deathMessage4":"Wstawaj zesrałeś się! A nie jednak nie żyjesz :("
+         }
+      }
+   
+
+}
