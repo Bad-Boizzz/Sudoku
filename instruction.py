@@ -1,5 +1,7 @@
+import main 
+import time
 def clear_terminal():
-print("\033[2J\033[H")
+  print("\033[2J\033[H")
 
 def instruction ():
   print("Rules of which sudoku would you like to see:\n")
@@ -7,6 +9,31 @@ def instruction ():
   print("2. Diagonal sudoku")
   print("3. Jigsaw sudoku")
   print("4. Killer sudoku")
+  try:
+    choice = int(input("Choose the option (1-4):")
+    match choice:
+      case 1:
+        clear_terminal()
+        classic_sudoku()
+      case 2:
+        clear_terminal()
+        diagonal_sudoku()
+      case 3:
+        clear_terminal()
+        jigsaw_sudoku()
+      case 4:
+        clear_terminal()
+        killer_sudoku()
+      case _:
+        print("Invalid choice, try again")
+        sleep(1)
+        clear_terminal()
+        instruction()
+  except ValueError:
+    print("Invalid choice, try again")
+    sleep(1)
+    instruction()
+                  
 
 def classic_sudoku ():
   clear_terminal()
