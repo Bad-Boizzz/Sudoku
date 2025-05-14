@@ -41,5 +41,9 @@ def game():
                 print("═" * cell_width + "╩", end="")
             print("═" * cell_width + "╝")
 
+    print("\nBack to main menu (press Enter)")
+    x = input()
+    return
+
 if __name__ == "__main__":
     game()
