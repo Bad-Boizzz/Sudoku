@@ -1,4 +1,5 @@
 # from math import ceil
+import main
 from graphic import change_text_color
 
 def game():
@@ -43,7 +44,7 @@ def game():
 
     print("\nBack to main menu (press Enter)")
     x = input()
-    return
+    main.main()
 
 if __name__ == "__main__":
     game()
