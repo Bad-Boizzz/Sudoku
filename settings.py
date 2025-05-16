@@ -165,13 +165,14 @@ def interactive_settings_menu(settings_dict, translations):
             translations = load_translations(settings_dict['settings.language'])
 
 # ---------- Main entry ----------
-
-if __name__ == '__main__':
+def main_settings():
     # Load settings
     settings = load_settings()
     # Load translations based on language setting
     translations = load_translations(settings.get('settings.language', default_settings['settings.language']))
     # Run interactive menu
     interactive_settings_menu(settings, translations)
-    # BACK TO MAIN!!!
-    # Future code will continue here
+    main()
+
+if __name__ == '__main__':
+    main_settings()
