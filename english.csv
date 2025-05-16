@@ -1,0 +1,15 @@
+key,value
+settings.menu.current_settings,SETTINGS:
+settings.menu.exit,Exit
+settings.prompt.select_setting,"Enter the number of the setting to change (or 0 to end):"
+settings.message.exiting,Kończę menu ustawień.     ////////////
+settings.message.invalid_choice,Wrong number. Try again.
+settings.list.available_languages,Avaliable languages:
+settings.prompt.select_language,Choose language number:
+settings.message.no_languages,Language files (*.csv) not found in current directory.
+settings.prompt.enter_new_value,Enter a new value for ‘{key}’ (currently: {value}):
+settings.value.polish.csv,polski
+settings.value.english.csv,english
+settings.color,Color
+settings.language,Language
+settings.level,Difficulty level
