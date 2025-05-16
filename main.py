@@ -8,7 +8,7 @@ import instruction
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL"],
+        languages_prefixes=["PL","EN"],
         default_lang="PL",
         postfix="pack",
         debug_mode=False
