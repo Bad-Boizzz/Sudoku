@@ -2,6 +2,15 @@ import main
 from time import sleep
 from main import print_mainmenu
 from typing import Callable, Optional
+from language.LanguageManager import LanguageManager
+
+lm = LanguageManager(
+        languagePacks_path="language/languagePacks",
+        languages_prefixes=["PL","EN"],
+        default_lang="ENG",
+        postfix="pack",
+        debug_mode=False
+    )
 
 def clear_terminal() -> None:
   print("\033[2J\033[H")
