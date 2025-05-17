@@ -1,0 +1,10 @@
+{
+  "instruction": {
+    "GoBack": "Press enter to go back...",
+    "InvalidChoice": "Invalid choice, try again.",
+    "GoBackToMainMenu": "Press enter to go back to main menu...",
+    "ChoseSudoku": "Rules of which sudoku would you like to see:\n",
+    "ChoseOption": "Choose the option (1-4):"
+  }
+}
+    
