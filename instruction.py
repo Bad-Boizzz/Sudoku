@@ -1,4 +1,3 @@
-import main 
 from time import sleep
 from main import print_mainmenu
 from typing import Callable, Optional
@@ -17,60 +16,56 @@ def clear_terminal() -> None:
   
 def go_back_to_instruction() -> None:
   while True:
-    response: str = input("Press enter to go back...")
+    response: str = input(lm.get("instruction.GoBack"))
     if (response == ""):
       break
     else:
       clear_terminal()
-      print("Invalid choice, try again")
+      print(lm.get("instruction.InvalidChoice"))
       sleep(1)
   clear_terminal()
   instruction()
   
 def go_back_to_main_menu() -> None:
   while True:
-    response: str = input("Press enter to go back to main menu...")
+    response: str = input(lm.get("instruction.GoBackToMainMenu")).strip()
     if (response == ""):
       break
     else:
-      print("Invalid choice, try again")
+      print(lm.get("instruction.InvalidChoice"))
       sleep(1)
       clear_terminal()
   clear_terminal()
   print_mainmenu()
 
-def instruction () -> None:
-  clear_terminal()
-  print("Rules of which sudoku would you like to see:\n")
-  print("1. Classic sudoku")
-  print("2. Diagonal sudoku")
-  print("3. Jigsaw sudoku")
-  print("4. Killer sudoku")
-  
-  options: dict[int, Callable[[], None]] = {
-    1: classic_sudoku,
-    2: diagonal_sudoku,
-    3: jigsaw_sudoku,
-    4: killer_sudoku
-  }
-  
-  try:
-    choice = int(input("Choose the option (1-4):"))
-    func: Optional[Callable[[], None]] = options.get(choice)
-    if func:
-      clear_terminal()
-      func()
-    else:
-      print("Invalid choice, try again")
-      sleep(1)
-      clear_terminal()
-      instruction()      
-  except ValueError:
-    print("Invalid choice, try again")
-    sleep(1)
-    clear_terminal()
-    instruction()
-                  
+def instruction() -> None:
+    while True:
+        clear_terminal()
+        print(lm.get("instruction.ChoseSudoku"))
+        print("1. Classic sudoku")
+        print("2. Diagonal sudoku")
+        print("3. Jigsaw sudoku")
+        print("4. Killer sudoku")
+
+        options: dict[int, Callable[[], None]] = {
+            1: classic_sudoku,
+            2: diagonal_sudoku,
+            3: jigsaw_sudoku,
+            4: killer_sudoku
+        }
+
+        try:
+            choice = int(input(lm.get("instruction.ChoseOption")))
+            func = options.get(choice)
+            if func:
+                clear_terminal()
+                func()
+                break
+            else:
+                raise ValueError
+        except ValueError:
+            print(lm.get("instruction.InvalidChoice"))
+            sleep(1)
 
 def classic_sudoku () -> None:
   clear_terminal()
