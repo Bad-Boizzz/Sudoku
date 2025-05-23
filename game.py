@@ -16,30 +16,9 @@ def generate_sudoku(sudoku_solution, num_holes = 48):
     
     return puzzle
 
-sudoku_sample = [
-    [6, 7, 1, 3, 5, 8, 2, 4, 9],
-    [8, 9, 3, 7, 4, 2, 6, 5, 1],
-    [2, 4, 5, 9, 6, 1, 8, 7, 3],
-    [4, 5, 9, 6, 7, 3, 1, 2, 8],
-    [3, 6, 8, 1, 2, 5, 7, 9, 4],
-    [7, 1, 2, 8, 9, 4, 3, 6, 5],
-    [9, 3, 4, 2, 1, 7, 5, 8, 6],
-    [1, 2, 6, 5, 8, 9, 4, 3, 7],
-    [5, 8, 7, 4, 3, 6, 9, 1, 2],
-]
-
-def game():
-    rows_cols_no = 9
-    cell_width = 3
-    group_by = 3
-
-    default_color = "red"
-    fulfillment_color = "white"
-    new_value_color = "blue"
-
-    blank_sudoku = generate_sudoku(sudoku_sample)
-    result_sudoku = [row[:] for row in blank_sudoku]
-
+def print_sudoku(blank_sudoku, result_sudoku,
+                 rows_cols_no=9, cell_width=3, group_by=3,
+                 default_color="red", fulfillment_color="white", new_value_color="blue"):
     change_text_color(default_color)
     print("╔", end="")
     for _ in range(rows_cols_no-1):
@@ -77,6 +56,24 @@ def game():
             print("═" * cell_width + "╝")
 
     change_text_color(fulfillment_color)
+
+sudoku_sample = [
+    [6, 7, 1, 3, 5, 8, 2, 4, 9],
+    [8, 9, 3, 7, 4, 2, 6, 5, 1],
+    [2, 4, 5, 9, 6, 1, 8, 7, 3],
+    [4, 5, 9, 6, 7, 3, 1, 2, 8],
+    [3, 6, 8, 1, 2, 5, 7, 9, 4],
+    [7, 1, 2, 8, 9, 4, 3, 6, 5],
+    [9, 3, 4, 2, 1, 7, 5, 8, 6],
+    [1, 2, 6, 5, 8, 9, 4, 3, 7],
+    [5, 8, 7, 4, 3, 6, 9, 1, 2],
+]
+
+def game():
+    blank_sudoku = generate_sudoku(sudoku_sample)
+    result_sudoku = [row[:] for row in blank_sudoku]
+
+    print_sudoku(blank_sudoku, result_sudoku)
 
     print("\nBack to main menu (press Enter)")
     x = input()
