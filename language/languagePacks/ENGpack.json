@@ -27,7 +27,8 @@
     "KillerIntro": "A Killer Sudoku puzzle follows the standard rules of Sudoku with additional rules:\n",
     "KillerCage1": "Additionally the grid is divided into cages, outlined with dotted or bold lines.",
     "KillerCage2": "The number shown in the upper corner of the cage is the target sum that the digits within that cage must add up to.",
-    "KillerCage3": "In each cage digits cannot be repeated.\n"
+    "KillerCage3": "In each cage digits cannot be repeated.\n",
+    "GoBackToMainMenuOption": "Return to main menu"
     
   }
 }
