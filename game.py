@@ -1,14 +1,44 @@
-# from math import ceil
+import random
+from math import ceil
 import main
 from graphic import change_text_color
+
+def generate_sudoku(sudoku_solution, num_holes = 48):
+    puzzle = [row[:] for row in sudoku_solution]
+    
+    holes = set()
+    while len(holes) < num_holes:
+        row = random.randint(0, 8)
+        col = random.randint(0, 8)
+        if (row, col) not in holes:
+            puzzle[row][col] = 0
+            holes.add((row, col))
+    
+    return puzzle
+
+sudoku_sample = [
+    [6, 7, 1, 3, 5, 8, 2, 4, 9],
+    [8, 9, 3, 7, 4, 2, 6, 5, 1],
+    [2, 4, 5, 9, 6, 1, 8, 7, 3],
+    [4, 5, 9, 6, 7, 3, 1, 2, 8],
+    [3, 6, 8, 1, 2, 5, 7, 9, 4],
+    [7, 1, 2, 8, 9, 4, 3, 6, 5],
+    [9, 3, 4, 2, 1, 7, 5, 8, 6],
+    [1, 2, 6, 5, 8, 9, 4, 3, 7],
+    [5, 8, 7, 4, 3, 6, 9, 1, 2],
+]
 
 def game():
     rows_cols_no = 9
     cell_width = 3
     group_by = 3
 
-    default_color = "white"
-    fulfillment_color = "cyan"
+    default_color = "red"
+    fulfillment_color = "white"
+    new_value_color = "blue"
+
+    blank_sudoku = generate_sudoku(sudoku_sample)
+    result_sudoku = [row[:] for row in blank_sudoku]
 
     change_text_color(default_color)
     print("╔", end="")
@@ -19,11 +49,15 @@ def game():
     for i in range(rows_cols_no):
         for n in range(cell_width // 2):
             for j in range(rows_cols_no):
-                # if n == cell_width // 2 // 2:
-                #     print("║" + " " * ((cell_width-1) // 2) + str((i*rows_cols_no+j)%10) + " " * ceil((cell_width-1) / 2), end="")
-                #     continue
                 change_text_color(fulfillment_color) if j % group_by != 0 else None
-                print("║" + " " * cell_width, end="")
+                print("║" + " " * ((cell_width-1) // 2), end="")
+
+                if n == cell_width // 2 // 2:
+                    change_text_color(fulfillment_color if blank_sudoku[i][j] == result_sudoku[i][j] else new_value_color)
+                    print(result_sudoku[i][j] if result_sudoku[i][j] != 0 else " ", end="")
+                    change_text_color(fulfillment_color) if j % group_by != 0 else None
+
+                print(" " * ceil((cell_width-1) / 2), end="")
                 change_text_color(default_color)
             print("║")
 
@@ -41,6 +75,8 @@ def game():
             for _ in range(rows_cols_no-1):
                 print("═" * cell_width + "╩", end="")
             print("═" * cell_width + "╝")
+
+    change_text_color(fulfillment_color)
 
     print("\nBack to main menu (press Enter)")
     x = input()
