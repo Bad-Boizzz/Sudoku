@@ -1,5 +1,6 @@
 import random
 from math import ceil
+from time import sleep
 import main
 from graphic import change_text_color
 
@@ -57,6 +58,23 @@ def print_sudoku(blank_sudoku, result_sudoku,
 
     change_text_color(fulfillment_color)
 
+def choose_option():
+    print("\n1. Wróć do menu głównego")
+    choice = input("Wybierz opcję: ")
+    
+    if not choice.isdigit():
+        print("Podaj liczbę.")
+        sleep(1)
+        return 0
+
+    choice = int(choice)
+
+    if choice <= 0 or choice > 1:
+        print("Liczba poza zakresem.")
+        sleep(1)
+    
+    return choice
+
 sudoku_sample = [
     [6, 7, 1, 3, 5, 8, 2, 4, 9],
     [8, 9, 3, 7, 4, 2, 6, 5, 1],
@@ -73,11 +91,19 @@ def game():
     blank_sudoku = generate_sudoku(sudoku_sample)
     result_sudoku = [row[:] for row in blank_sudoku]
 
-    print_sudoku(blank_sudoku, result_sudoku)
+    while True:
+        main.clear()
 
-    print("\nBack to main menu (press Enter)")
-    x = input()
-    main.main()
+        print_sudoku(blank_sudoku, result_sudoku)
+
+        choice = choose_option()
+
+        match choice:
+            case 1:
+                main.main()
+                return
+            case _:
+                continue
 
 if __name__ == "__main__":
     game()
