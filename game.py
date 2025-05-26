@@ -60,6 +60,7 @@ def print_sudoku(blank_sudoku, result_sudoku,
 
 def choose_option():
     print("\n1. Wróć do menu głównego")
+    print("2. Uzupełnij komórkę")
     choice = input("Wybierz opcję: ")
     
     if not choice.isdigit():
@@ -69,11 +70,57 @@ def choose_option():
 
     choice = int(choice)
 
-    if choice <= 0 or choice > 1:
+    if choice <= 0 or choice > 2:
         print("Liczba poza zakresem.")
         sleep(1)
     
     return choice
+
+def get_pos():
+    x = -1
+    y = -1
+    while x == -1 or y == -1:
+        x = input("Podaj wiersz (1-9) komórki: ")
+        y = input("Podaj kolumnę (1-9) komórki: ")
+        if not x.isdigit() or not y.isdigit():
+            print("Podaj liczby.")
+            x = -1
+            y = -1
+        else:
+            x = int(x) - 1
+            y = int(y) - 1
+            if x < 0 or x > 8 or y < 0 or y > 8:
+                print("Liczby poza zakresem.")
+                x = -1
+                y = -1
+    
+    return x, y
+
+def get_cell_value(x=0, y=0):
+    value = 0
+    while value == 0:
+        value = input(f"Podaj wartość (1-9) do komórki ({x+1}, {y+1}): ")
+        if not value.isdigit():
+            print("Podaj liczbę.")
+            value = 0
+        else:
+            value = int(value)
+            if value < 1 or value > 9:
+                print("Liczba poza zakresem.")
+                value = 0
+    
+    return value
+
+def fill_cell(result_sudoku, blank_sudoku):
+    x, y = get_pos()
+    
+    if blank_sudoku[x][y] != 0:
+        print("Tej komórki nie można edytować.")
+        sleep(1)
+        return
+    
+    value = get_cell_value(x, y)
+    result_sudoku[x][y] = value
 
 sudoku_sample = [
     [6, 7, 1, 3, 5, 8, 2, 4, 9],
@@ -102,6 +149,8 @@ def game():
             case 1:
                 main.main()
                 return
+            case 2:
+                fill_cell(result_sudoku, blank_sudoku)
             case _:
                 continue
 
