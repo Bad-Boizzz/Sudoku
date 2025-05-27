@@ -61,6 +61,7 @@ def print_sudoku(blank_sudoku, result_sudoku,
 def choose_option():
     print("\n1. Wróć do menu głównego")
     print("2. Uzupełnij komórkę")
+    print("3. Wyczyść komórkę")
     choice = input("Wybierz opcję: ")
     
     if not choice.isdigit():
@@ -70,7 +71,7 @@ def choose_option():
 
     choice = int(choice)
 
-    if choice <= 0 or choice > 2:
+    if choice <= 0 or choice > 3:
         print("Liczba poza zakresem.")
         sleep(1)
     
@@ -99,7 +100,7 @@ def get_pos():
 def get_cell_value(x=0, y=0):
     value = 0
     while value == 0:
-        value = input(f"Podaj wartość (1-9) do komórki ({x+1}, {y+1}): ")
+        value = input(f"Podaj wartość (1-9) do komórki ({y+1}, {x+1}): ")
         if not value.isdigit():
             print("Podaj liczbę.")
             value = 0
@@ -121,6 +122,16 @@ def fill_cell(result_sudoku, blank_sudoku):
     
     value = get_cell_value(x, y)
     result_sudoku[x][y] = value
+
+def clear_cell(result_sudoku, blank_sudoku):
+    x, y = get_pos()
+    
+    if blank_sudoku[x][y] != 0:
+        print("Tej komórki nie można wyczyścić.")
+        sleep(1)
+        return
+    
+    result_sudoku[x][y] = 0
 
 sudoku_sample = [
     [6, 7, 1, 3, 5, 8, 2, 4, 9],
@@ -151,6 +162,8 @@ def game():
                 return
             case 2:
                 fill_cell(result_sudoku, blank_sudoku)
+            case 3:
+                clear_cell(result_sudoku, blank_sudoku)
             case _:
                 continue
 
