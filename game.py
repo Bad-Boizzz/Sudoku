@@ -133,6 +133,39 @@ def clear_cell(result_sudoku, blank_sudoku):
     
     result_sudoku[x][y] = 0
 
+def check_if_game_finished(result_sudoku):
+    for i in range(9):
+        for j in range(9):
+            if result_sudoku[i][j] == 0:
+                return False
+    return True
+
+def check_if_result_is_valid(result_sudoku):
+    # Check rows
+    for row in result_sudoku:
+        if len(set(row)) != 9 or 0 in row:
+            return False
+
+    # Check columns
+    for col_index in range(9):
+        col = [result_sudoku[row_index][col_index] for row_index in range(9)]
+        if len(set(col)) != 9 or 0 in col:
+            return False
+
+    # Check 3x3 squares
+    for box_row in range(3):
+        for box_col in range(3):
+            square = set()
+            for i in range(3):
+                for j in range(3):
+                    value = result_sudoku[box_row * 3 + i][box_col * 3 + j]
+                    if value != 0:
+                        square.add(value)
+            if len(square) != 9:
+                return False
+
+    return True
+
 sudoku_sample = [
     [6, 7, 1, 3, 5, 8, 2, 4, 9],
     [8, 9, 3, 7, 4, 2, 6, 5, 1],
@@ -146,6 +179,8 @@ sudoku_sample = [
 ]
 
 def game():
+    is_modified = True
+
     blank_sudoku = generate_sudoku(sudoku_sample)
     result_sudoku = [row[:] for row in blank_sudoku]
 
@@ -154,6 +189,18 @@ def game():
 
         print_sudoku(blank_sudoku, result_sudoku)
 
+        if is_modified and check_if_game_finished(result_sudoku):
+            if check_if_result_is_valid(result_sudoku):
+                change_text_color("green")
+                print("Gratulacje! Ukończyłeś sudoku!")
+            else:
+                change_text_color("red")
+                print("Niestety, rozwiązanie jest nieprawidłowe.")
+            
+            sleep(2)
+            change_text_color("white")
+            is_modified = False
+
         choice = choose_option()
 
         match choice:
@@ -161,8 +208,10 @@ def game():
                 main.main()
                 return
             case 2:
+                is_modified = True
                 fill_cell(result_sudoku, blank_sudoku)
             case 3:
+                is_modified = True
                 clear_cell(result_sudoku, blank_sudoku)
             case _:
                 continue
