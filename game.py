@@ -166,6 +166,24 @@ def check_if_result_is_valid(result_sudoku):
 
     return True
 
+def get_level_difficulty():
+    while True:
+        try:
+            main.clear()
+            print("1. Poziom łatwy")
+            print("2. Poziom średni")
+            print("3. Poziom trudny")
+            print("4. Poziom ekspercki")
+            level = int(input("Wybierz poziom trudności (1-4): "))
+            if level in [1, 2, 3, 4]:
+                return level
+            else:
+                print("Wybierz liczbę z zakresu 1-4.")
+        except ValueError:
+            print("Podaj poprawną wartość.")
+
+        sleep(1)
+
 sudoku_sample = [
     [6, 7, 1, 3, 5, 8, 2, 4, 9],
     [8, 9, 3, 7, 4, 2, 6, 5, 1],
@@ -181,7 +199,21 @@ sudoku_sample = [
 def game():
     is_modified = True
 
-    blank_sudoku = generate_sudoku(sudoku_sample)
+    level_difficulty = get_level_difficulty()
+
+    match level_difficulty:
+        case 1:
+            num_holes = 45
+        case 2:
+            num_holes = 50
+        case 3:
+            num_holes = 56
+        case 4:
+            num_holes = 60
+        case _:
+            num_holes = 45
+
+    blank_sudoku = generate_sudoku(sudoku_sample, num_holes=num_holes)
     result_sudoku = [row[:] for row in blank_sudoku]
 
     while True:
