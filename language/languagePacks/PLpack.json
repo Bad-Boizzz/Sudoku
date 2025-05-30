@@ -1,6 +1,9 @@
  {
     "mainmenu": 
     {
+        "chooselangueage": "Wybierz język: ",
+        "polish": "polski",
+        "english": "angielski",
         "startingmessage": "Gra, która pobudzi Twój umysł!",
         "start": "Rozpocznij",
         "HowToPlay": "Jak grać?",
