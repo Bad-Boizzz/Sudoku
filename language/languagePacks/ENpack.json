@@ -1,9 +1,6 @@
  {
     "mainmenu": 
     {   
-        "chooselangueage": "Choose language: ",
-        "polish": "polish",
-        "english": "english",
         "startingmessage": "Game that will stimulate your mind!",
         "start": "Start",
         "HowToPlay": "How to play?",
