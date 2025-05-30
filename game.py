@@ -4,18 +4,50 @@ from time import sleep
 import main
 from graphic import change_text_color
 
-def generate_sudoku(sudoku_solution, num_holes = 48):
-    puzzle = [row[:] for row in sudoku_solution]
-    
+def generate_sudoku(num_holes = 48):
+    # Generate a complete, valid 9x9 Sudoku solution using backtracking
+
+    # Function to check if a number can be placed in a given cell
+    def is_valid(board, row, col, num):
+        for i in range(9):
+            if board[row][i] == num or board[i][col] == num:
+                return False
+        start_row, start_col = 3 * (row // 3), 3 * (col // 3)
+        for i in range(3):
+            for j in range(3):
+                if board[start_row + i][start_col + j] == num:
+                    return False
+        return True
+
+    # Fill the board with numbers 1-9
+    def fill_board(board):
+        for row in range(9):
+            for col in range(9):
+                if board[row][col] == 0:
+                    nums = list(range(1, 10))
+                    random.shuffle(nums)
+                    for num in nums:
+                        if is_valid(board, row, col, num):
+                            board[row][col] = num
+                            if fill_board(board):
+                                return True
+                            board[row][col] = 0
+                    return False
+        return True
+
+    sudoku_solution = [[0 for _ in range(9)] for _ in range(9)]
+    fill_board(sudoku_solution)
+
+    # Remove numbers to create holes in the Sudoku puzzle
     holes = set()
     while len(holes) < num_holes:
         row = random.randint(0, 8)
         col = random.randint(0, 8)
         if (row, col) not in holes:
-            puzzle[row][col] = 0
+            sudoku_solution[row][col] = 0
             holes.add((row, col))
     
-    return puzzle
+    return sudoku_solution
 
 def print_sudoku(blank_sudoku, result_sudoku,
                  rows_cols_no=9, cell_width=3, group_by=3,
@@ -184,18 +216,6 @@ def get_level_difficulty():
 
         sleep(1)
 
-sudoku_sample = [
-    [6, 7, 1, 3, 5, 8, 2, 4, 9],
-    [8, 9, 3, 7, 4, 2, 6, 5, 1],
-    [2, 4, 5, 9, 6, 1, 8, 7, 3],
-    [4, 5, 9, 6, 7, 3, 1, 2, 8],
-    [3, 6, 8, 1, 2, 5, 7, 9, 4],
-    [7, 1, 2, 8, 9, 4, 3, 6, 5],
-    [9, 3, 4, 2, 1, 7, 5, 8, 6],
-    [1, 2, 6, 5, 8, 9, 4, 3, 7],
-    [5, 8, 7, 4, 3, 6, 9, 1, 2],
-]
-
 def game():
     is_modified = True
 
@@ -213,7 +233,7 @@ def game():
         case _:
             num_holes = 45
 
-    blank_sudoku = generate_sudoku(sudoku_sample, num_holes=num_holes)
+    blank_sudoku = generate_sudoku(num_holes)
     result_sudoku = [row[:] for row in blank_sudoku]
 
     while True:
