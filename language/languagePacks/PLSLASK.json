@@ -1,0 +1,30 @@
+{
+"instruction": {
+"GoBack": "Wciśnij enter, żeby sie cofnōńć...",
+"InvalidChoice": "Felerny wybōr, sprōbuj jeszcze roz.",
+"GoBackToMainMenu": "Wciśnij enter, żeby wrōcić do głōwnygo menu...",
+"ChoseSudoku": "Zasady kerego sudoku chcesz ôbejrzeć:\n",
+"ChoseOption": "Wybier opcyjã (1-4):",
+"ClassicSudoku": "1. Klasyczne Sudoku",
+"DiagonalSudoku": "2. Sudoku ze przekōntnymi",
+"JigsawSudoku": "3. Sudoku niyregularne",
+"KillerSudoku": "4. Killer Sudoku",
+"ClassicIntro": "Standardowo zagadka Sudoku skłŏdŏ sie z siatki 9 blokōw. Kożdy blok zawiyro 9 pōl ułożōnych we 3 rzōndach i 3 kolumnach.\n",
+"ClassicDetails1": "Niykere pola sōm wstympnio wypełniōne i niy idzie ich zmieniać.",
+"ClassicDetails2": "Żeby rozwiōnzać zagadka, wszyjske 81 pōł musi zawiyrać cyfry, a te reguły muszōm być spełniōne:\n",
+"ClassicRule1": "1. Kożdŏ kolumna musi zawiyrać wszyjske cyfry ôd 1 do 9, bez powtōrzyniŏ.",
+"ClassicRule2": "2. Kożdy rzōnd musi zawiyrać wszyjske cyfry ôd 1 do 9, bez powtōrzyniŏ.",
+"ClassicRule3": "3. Kożdy blok 3x3 musi zawiyrać wszyjske cyfry ôd 1 do 9, bez powtōrzyniŏ.\n",
+"DiagonalIntro": "Sudoku ze przekōntnymi ôstŏwiŏ standardowe reguły Sudoku ze jednōm zmianōm.\n",
+"DiagonalStandardRules": "Standardowe reguły Sudoku:",
+"DiagonalExtra": "Dodatkowo ôbje głōwne przekōntne muszōm zawiyrać wszyjske cyfry ôd 1 do 9, bez powtōrzyniŏ.\n",
+"JigsawIntro": "Sudoku niyregularne to wariant Sudoku, we kerym standardowe 9 blokōw 3x3 zastōmpiōne sōm przez 9 regiōnōw ô niyregularnych sztalōnkach.\n",
+"JigsawChange": "Zagadka ôstŏwiŏ standardowe reguły Sudoku ze jednōm zmianōm:",
+"JigsawRule3": "3. Kożdy niyregularny regiōn musi zawiyrać wszyjske cyfry ôd 1 do 9, bez powtōrzyniŏ.\n",
+"KillerIntro": "Killer Sudoku ôstŏwiŏ standardowe reguły Sudoku ze dodatkowymi zasadami:\n",
+"KillerCage1": "Dodatkowo siatka je podzielōnŏ na klatki, ôznaczōne przerywanymi abo grubymi linijami.",
+"KillerCage2": "Cyfra we gōrnym rogu klatki ôznaczŏ sumã, do keryj muszōm sie dodŏwać cyfry we tyj klatce.",
+"KillerCage3": "We kożdyj klatce cyfry sie niy mogōm powtŏrzać.\n",
+"GoBackToMainMenuOption": "Wrōć do głōwnygo menu"
+}
+}
