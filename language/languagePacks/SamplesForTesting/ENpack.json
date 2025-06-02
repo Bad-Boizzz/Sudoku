@@ -36,6 +36,12 @@
             "actionMenuAfterOption1": {
                 "actionMenuIntroduction": "The window closed you cannot escape"
             },
+
+            
+            "kluczktoregoniemawpolskim": {
+                "actionMenuIntroduction": "The window closed you cannot escape"
+            },
+
             "actionMenuAfterOption2": {
                 "actionMenuIntroduction": "The door closed, you cannot escape"
             },
