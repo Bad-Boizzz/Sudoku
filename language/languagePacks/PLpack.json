@@ -1,4 +1,35 @@
- {
+{
+  "instruction": {
+    "GoBack": "Naciśnij enter, aby wrócić...",
+    "InvalidChoice": "Nieprawidłowy wybór, spróbuj ponownie.",
+    "GoBackToMainMenu": "Naciśnij enter, aby wrócić do menu głównego...",
+    "ChoseSudoku": "Zasady którego sudoku chcesz zobaczyć:\n",
+    "ChoseOption": "Wybierz opcję (1-4):",
+    "ClassicSudoku": "1. Klasyczne Sudoku",
+    "DiagonalSudoku": "2. Sudoku z przekątnymi",
+    "JigsawSudoku": "3. Sudoku nieregularne",
+    "KillerSudoku": "4. Killer Sudoku",
+    "ClassicIntro": "Standardowa łamigłówka Sudoku składa się z siatki 9 bloków. Każdy blok zawiera 9 pól ułożonych w 3 wiersze i 3 kolumny.\n",
+    "ClassicDetails1": "Niektóre pola są wstępnie wypełnione i nie można ich zmieniać.",
+    "ClassicDetails2": "Aby rozwiązać łamigłówkę, wszystkie 81 pól musi zawierać liczby, a następujące zasady muszą zostać spełnione:\n",
+    "ClassicRule1": "1. Każda kolumna musi zawierać wszystkie cyfry od 1 do 9, bez powtórzeń.",
+    "ClassicRule2": "2. Każdy wiersz musi zawierać wszystkie cyfry od 1 do 9, bez powtórzeń.",
+    "ClassicRule3": "3. Każdy blok 3x3 musi zawierać wszystkie cyfry od 1 do 9, bez powtórzeń.\n",
+    
+    "DiagonalIntro": "Sudoku z przekątnymi zachowuje standardowe zasady Sudoku z jedną zmianą.\n",
+    "DiagonalStandardRules": "Standardowe zasady Sudoku:",
+    "DiagonalExtra": "Dodatkowo obie główne przekątne muszą zawierać wszystkie cyfry od 1 do 9, bez powtórzeń.\n",
+    
+    "JigsawIntro": "Sudoku nieregularne to wariant Sudoku, w którym standardowe 9 bloków 3x3 zastąpiono 9 regionami o nieregularnych kształtach.\n",
+    "JigsawChange": "Łamigłówka zachowuje standardowe zasady Sudoku z jedną zmianą:",
+    "JigsawRule3": "3. Każdy nieregularny region musi zawierać wszystkie cyfry od 1 do 9, bez powtórzeń.\n",
+    
+    "KillerIntro": "Killer Sudoku zachowuje standardowe zasady Sudoku z dodatkowymi regułami:\n",
+    "KillerCage1": "Dodatkowo siatka podzielona jest na klatki, zaznaczone przerywanymi lub pogrubionymi liniami.",
+    "KillerCage2": "Liczba w górnym rogu klatki oznacza sumę, do której muszą dodawać się cyfry w tej klatce.",
+    "KillerCage3": "W każdej klatce cyfry nie mogą się powtarzać.\n",
+    "GoBackToMainMenuOption": "Wróć do menu głównego"
+  }
     "mainmenu": 
     {
         "startingmessage": "Gra, która pobudzi Twój umysł!",

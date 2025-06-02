@@ -8,7 +8,7 @@ import instruction
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL"],
+        languages_prefixes=["PL","EN"],
         default_lang="PL",
         postfix="pack",
         debug_mode=False
@@ -17,11 +17,13 @@ lm = LanguageManager(
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def print_mainmenu() -> int:
-    try:
+def print_initial_message():
         print(lm.get("mainmenu.startingmessage"))
         sleep(1)
         clear()
+
+def print_mainmenu() -> int:
+    try:
         print("SUDOKU \n \n \n")
         print("1. " + lm.get("mainmenu.start"))
         print("2. " + lm.get("mainmenu.HowToPlay"))
@@ -56,13 +58,13 @@ def print_mainmenu() -> int:
                 return 1
             
             case _:
-                print(lm.get("mainmenu.wrongoption"))
-                sleep(0.5)
+                print("\n" + lm.get("mainmenu.wrongoption"))
+                sleep(1)
                 clear()
                 
     except ValueError:
-        print(lm.get("mainmenu.wrongoption"))
-        sleep(0.5)
+        print("\n" + lm.get("mainmenu.wrongoption"))
+        sleep(1)
         clear()
         return 0
         
@@ -74,4 +76,5 @@ def main():
 
             
 if __name__ == "__main__":
+    print_initial_message()
     main()
