@@ -1,7 +1,6 @@
 import random
 from math import ceil
 from time import sleep
-import main
 from graphic import change_text_color
 
 def generate_sudoku(num_holes = 48):
@@ -199,9 +198,10 @@ def check_if_result_is_valid(result_sudoku):
     return True
 
 def get_level_difficulty():
+    from main import clear
     while True:
         try:
-            main.clear()
+            clear()
             print("1. Poziom łatwy")
             print("2. Poziom średni")
             print("3. Poziom trudny")
@@ -217,6 +217,7 @@ def get_level_difficulty():
         sleep(1)
 
 def game():
+    import main
     is_modified = True
 
     level_difficulty = get_level_difficulty()

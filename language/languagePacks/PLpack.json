@@ -29,7 +29,7 @@
     "KillerCage2": "Liczba w górnym rogu klatki oznacza sumę, do której muszą dodawać się cyfry w tej klatce.",
     "KillerCage3": "W każdej klatce cyfry nie mogą się powtarzać.\n",
     "GoBackToMainMenuOption": "Wróć do menu głównego"
-  }
+  },
     "mainmenu": 
     {
         "startingmessage": "Gra, która pobudzi Twój umysł!",
