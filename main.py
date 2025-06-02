@@ -3,7 +3,7 @@ import os
 import game
 from time import sleep
 from language.LanguageManager import LanguageManager
-# import settings
+import settings
 import instruction
 
 lm = LanguageManager(
@@ -45,7 +45,7 @@ def print_mainmenu() -> int:
             
             #settings    
             case 3:
-                #settings.settings()
+                settings.main_settings()
                 clear()
                 return 1
             

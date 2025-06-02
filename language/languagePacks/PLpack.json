@@ -29,16 +29,15 @@
     "KillerCage2": "Liczba w górnym rogu klatki oznacza sumę, do której muszą dodawać się cyfry w tej klatce.",
     "KillerCage3": "W każdej klatce cyfry nie mogą się powtarzać.\n",
     "GoBackToMainMenuOption": "Wróć do menu głównego"
+  },
+  "mainmenu": {
+   "startingmessage": "Gra, która pobudzi Twój umysł!",
+    "start": "Rozpocznij",
+    "HowToPlay": "Jak grać?",
+    "settings": "Ustawienia",
+    "exit": "Wyjście",
+    "chooseoption": "Wybierz opcję: ",
+    "exitmessage": "Dziękujemy za grę!",
+    "wrongoption": "Niepoprawny wybór, spróbuj ponownie."
   }
-    "mainmenu": 
-    {
-        "startingmessage": "Gra, która pobudzi Twój umysł!",
-        "start": "Rozpocznij",
-        "HowToPlay": "Jak grać?",
-        "settings": "Ustawienia",
-        "exit": "Wyjście",
-        "chooseoption": "Wybierz opcję: ",
-        "exitmessage": "Dziękujemy za grę!",
-        "wrongoption": "Niepoprawny wybór, spróbuj ponownie."
-    }
  }

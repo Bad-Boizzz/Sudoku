@@ -26,5 +26,16 @@
 "KillerCage2": "Cyfra we gōrnym rogu klatki ôznaczŏ sumã, do keryj muszōm sie dodŏwać cyfry we tyj klatce.",
 "KillerCage3": "We kożdyj klatce cyfry sie niy mogōm powtŏrzać.\n",
 "GoBackToMainMenuOption": "Wrōć do głōwnygo menu"
-}
+},
+"mainmenu": 
+    {
+        "startingmessage": "Gra, która pobudzi Twój umysł!",
+        "start": "Rozpocznij",
+        "HowToPlay": "Jak grać?",
+        "settings": "Ustawienia",
+        "exit": "Wyjście",
+        "chooseoption": "Wybierz opcję: ",
+        "exitmessage": "Dziękujemy za grę!",
+        "wrongoption": "Niepoprawny wybór, spróbuj ponownie."
+    }
 }

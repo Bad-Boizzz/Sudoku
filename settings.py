@@ -2,6 +2,7 @@ import os
 import csv
 import glob
 
+
 # Filenames
 default_settings_file = 'settings.csv'
 
@@ -172,7 +173,8 @@ def main_settings():
     translations = load_translations(settings.get('settings.language', default_settings['settings.language']))
     # Run interactive menu
     interactive_settings_menu(settings, translations)
-    main()
+    # main.main()
+    return
 
 if __name__ == '__main__':
     main_settings()
