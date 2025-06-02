@@ -5,7 +5,7 @@ from language.LanguageManager import LanguageManager
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN"],
+        languages_prefixes=["PL","ENG"],
         default_lang="ENG",
         postfix="pack",
         debug_mode=False
