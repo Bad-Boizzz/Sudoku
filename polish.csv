@@ -1,0 +1,18 @@
+key,value
+settings.menu.current_settings,Bieżące ustawienia:
+settings.menu.exit,Wyjście
+settings.prompt.select_setting,"Wprowadź numer ustawienia do zmiany (lub 0, aby zakończyć):"
+settings.message.exiting,Kończę menu ustawień.
+settings.message.invalid_choice,Nieprawidłowy wybór. Proszę wpisać poprawny numer.
+settings.list.available_languages,Dostępne pliki językowe:
+settings.prompt.select_language,Wybierz numer języka:
+settings.message.no_languages,Nie znaleziono plików językowych (*.csv) w bieżącym katalogu.
+settings.prompt.enter_new_value,Wprowadź nową wartość dla '{key}' (aktualnie: {value}):
+settings.message.added_setting,Dodano nowe ustawienie: '{key}' = '{value}'.
+settings.message.updated_setting,Zmieniono ustawienie '{key}': '{old}' → '{value}'.
+settings.label.final_settings,Końcowy stan ustawień:
+settings.value.1,1
+settings.value.polish.csv,polski
+settings.color,Kolor
+settings.language,Język
+settings.level,Poziom trudności
