@@ -1,35 +1,116 @@
-import os
-def clear_terminal():
-  if os.name == 'nt':
-    os.system('cls')
-  else:
-    os.system('clear')
+from time import sleep
+from main import print_mainmenu
+from typing import Callable, Optional
+from language.LanguageManager import LanguageManager
 
-def instruction ():
-  print("Rules of which sudoku would you like to see:\n")
-  print("1. Classic sudoku")
-  print("2. Diagonal sudoku")
-  print("3. Region sudoku")
-  print("4. Killer sudoku")
-  print("5. Jigsaw sudoku")
+lm = LanguageManager(
+        languagePacks_path="language/languagePacks",
+        languages_prefixes=["PL","ENG"],
+        default_lang="ENG",
+        postfix="pack",
+        debug_mode=False
+    )
 
-def classic_sudoku ():
+def clear_terminal() -> None:
+  print("\033[2J\033[H")
+  
+def go_back_to_instruction() -> None:
+  while True:
+    response: str = input(lm.get("instruction.GoBack"))
+    if (response == ""):
+      break
+    else:
+      clear_terminal()
+      print(lm.get("instruction.InvalidChoice"))
+      sleep(1)
   clear_terminal()
-  print("A standard sudoku puzzle consists of a grid of 9 blocks. Each block contains 9 boxes arranged in 3 rows and 3 columns.")
-  print("Some blocks will be pre-filled for you and they cannot be changed.")
-  print("In order to solve the puzzle all 81 boxes must contain numbers and the Sudoku rules must be followed:\n") 
-  print("1. Each column must contain all digits from 1 to 9, with no repetitions.")
-  print("1. Each row must contain all digits from 1 to 9, with no repetitions.")
-  print("1. Each block must contain all digits from 1 to 9, with no repetitions.")
+  instruction()
   
-def diagonal_sudoku ():
-  pass #TODO
+def go_back_to_main_menu() -> None:
+  while True:
+    response: str = input(lm.get("instruction.GoBackToMainMenu")).strip()
+    if (response == ""):
+      break
+    else:
+      print(lm.get("instruction.InvalidChoice"))
+      sleep(1)
+      clear_terminal()
+  clear_terminal()
+  print_mainmenu()
+
+def instruction() -> None:
+    while True:
+        clear_terminal()
+        print(lm.get("instruction.ChoseSudoku"))
+        print(lm.get("instruction.ClassicSudoku"))
+        print(lm.get("instruction.DiagonalSudoku"))
+        print(lm.get("instruction.JigsawSudoku"))
+        print(lm.get("instruction.KillerSudoku"))
+        print("5. " + lm.get("instruction.GoBackToMainMenuOption"))
+
+        options: dict[int, Callable[[], None]] = {
+            1: classic_sudoku,
+            2: diagonal_sudoku,
+            3: jigsaw_sudoku,
+            4: killer_sudoku,
+            5: go_back_to_main_menu
+        }
+
+        try:
+            choice = int(input(lm.get("instruction.ChoseOption")))
+            func = options.get(choice)
+            if func:
+                clear_terminal()
+                func()
+                break
+            else:
+                raise ValueError
+        except ValueError:
+            print(lm.get("instruction.InvalidChoice"))
+            sleep(1)
+
+def classic_sudoku () -> None:
+  clear_terminal()
+  print(lm.get("instruction.ClassicIntro"))
+  print(lm.get("instruction.ClassicDetails1"))
+  print(lm.get("instruction.ClassicDetails2")) 
+  print(lm.get("instruction.ClassicRule1"))
+  print(lm.get("instruction.ClassicRule2"))
+  print(lm.get("instruction.ClassicRule3"))
+  sleep(2)
+  go_back_to_instruction()
   
-def region_sudoku ():
-  pass #TODO
+def diagonal_sudoku () -> None:
+  clear_terminal()
+  print(lm.get("instruction.DiagonalIntro"))
+  print(lm.get("instruction.DiagonalStandardRules"))
+  print(lm.get("instruction.ClassicRule1"))
+  print(lm.get("instruction.ClassicRule2"))
+  print(lm.get("instruction.ClassicRule3"))
+  print(lm.get("instruction.DiagonalExtra"))
+  sleep(2)
+  go_back_to_instruction()
   
-def killer_sudoku ():
-  pass #TODO
+def jigsaw_sudoku () -> None:
+  clear_terminal()
+  print(lm.get("instruction.JigsawIntro"))
+  print(lm.get("instruction.JigsawChange"))
+  print(lm.get("instruction.ClassicRule1"))
+  print(lm.get("instruction.ClassicRule2"))
+  print(lm.get("instruction.JigsawRule3"))
+  sleep(2)
+  go_back_to_instruction()
   
-def jigsaw_sudoku ():
-  pass #TODO
+  
+def killer_sudoku () -> None:
+  clear_terminal()
+  print(lm.get("instruction.KillerIntro"))
+  print(lm.get("instruction.ClassicRule1"))
+  print(lm.get("instruction.ClassicRule2"))
+  print(lm.get("instruction.ClassicRule3"))
+  print(lm.get("instruction.KillerCage1"))
+  print(lm.get("instruction.KillerCage2"))
+  print(lm.get("instruction.KillerCage3"))
+  sleep(2)
+  go_back_to_instruction()
+  

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import json
 import os
 
@@ -108,4 +107,4 @@ if __name__ == "__main__":
     print(lm.get("testLanguageManagerPY.firstMessage"))              
     lm.set_language("PL")
     print(lm.get("testLanguageManagerPY.firstMessage"))   
-    print(lm.get("nima")) 
+    #print(lm.get("nima")) 

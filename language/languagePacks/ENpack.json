@@ -1,0 +1,13 @@
+ {
+    "mainmenu": 
+    {   
+        "startingmessage": "Game that will stimulate your mind!",
+        "start": "Start",
+        "HowToPlay": "How to play?",
+        "settings": "Settings",
+        "exit": "Exit",
+        "chooseoption": "Choose option: ",
+        "exitmessage": "Thank you for playing!",
+        "wrongoption": "Wrong choice, try again."
+    }
+ }

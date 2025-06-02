@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import json
 
 def escape_value(val: str) -> str:

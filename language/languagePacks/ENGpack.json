@@ -1,0 +1,35 @@
+{
+  "instruction": {
+    "GoBack": "Press enter to go back...",
+    "InvalidChoice": "Invalid choice, try again.",
+    "GoBackToMainMenu": "Press enter to go back to main menu...",
+    "ChoseSudoku": "Rules of which sudoku would you like to see:\n",
+    "ChoseOption": "Choose the option (1-4):",
+    "ClassicSudoku" : "1. Classic Sudoku",
+    "DiagonalSudoku" : "2. Diagonal Sudoku",
+    "JigsawSudoku" : "3. Jigsaw Sudoku",
+    "KillerSudoku" : "4. Killer Sudoku",
+    "ClassicIntro": "A standard Sudoku puzzle consists of a grid of 9 blocks. Each block contains 9 boxes arranged in 3 rows and 3 columns.\n",
+    "ClassicDetails1": "Some blocks will be pre-filled for you and they cannot be changed.",
+    "ClassicDetails2": "In order to solve the puzzle all 81 boxes must contain numbers and the Sudoku rules must be followed:\n",
+    "ClassicRule1": "1. Each column must contain all digits from 1 to 9, with no repetitions.",
+    "ClassicRule2": "2. Each row must contain all digits from 1 to 9, with no repetitions.",
+    "ClassicRule3": "3. Each block must contain all digits from 1 to 9, with no repetitions.\n",
+
+    "DiagonalIntro": "A Diagonal Sudoku puzzle follows the standard rules of Sudoku with one change.\n",
+    "DiagonalStandardRules": "Standard sudoku rules:",
+    "DiagonalExtra": "Additionally both main diagonals must also contain all digits from 1 to 9, with no repetitions.\n",
+
+    "JigsawIntro": "A Jigsaw Sudoku puzzle is a variant of standard Sudoku where the 9 standard 3x3 boxes are replaced by 9 irregularly shaped regions.\n",
+    "JigsawChange": "The puzzle follows the standard rules of Sudoku with one change:",
+    "JigsawRule3": "3. Each irregular region must contain all digits from 1 to 9, with no repetitions.\n",
+
+    "KillerIntro": "A Killer Sudoku puzzle follows the standard rules of Sudoku with additional rules:\n",
+    "KillerCage1": "Additionally the grid is divided into cages, outlined with dotted or bold lines.",
+    "KillerCage2": "The number shown in the upper corner of the cage is the target sum that the digits within that cage must add up to.",
+    "KillerCage3": "In each cage digits cannot be repeated.\n",
+    "GoBackToMainMenuOption": "Return to main menu"
+    
+  }
+}
+    
