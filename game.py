@@ -232,6 +232,18 @@ def get_hint(blank_sudoku, sudoku_solution):
     print("Kliknij Enter, aby kontynuować...")
     x = input()
 
+def exit_game():
+    from main import clear, main
+
+    answer = input("Czy na pewno chcesz wyjść z gry? (T/n): ").strip()
+
+    if answer == "T":
+        clear()
+        print("Dziękujemy za grę!")
+        sleep(1)
+        clear()
+        main()
+
 def game():
     import main
     is_modified = True
@@ -274,8 +286,7 @@ def game():
 
         match choice:
             case 1:
-                main.main()
-                return
+                exit_game()
             case 2:
                 is_modified = True
                 fill_cell(result_sudoku, blank_sudoku)
