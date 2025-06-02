@@ -38,15 +38,17 @@ def generate_sudoku(num_holes = 48):
     fill_board(sudoku_solution)
 
     # Remove numbers to create holes in the Sudoku puzzle
+    blank_sudoku = [[num for num in row] for row in sudoku_solution]
+
     holes = set()
     while len(holes) < num_holes:
         row = random.randint(0, 8)
         col = random.randint(0, 8)
         if (row, col) not in holes:
-            sudoku_solution[row][col] = 0
+            blank_sudoku[row][col] = 0
             holes.add((row, col))
     
-    return sudoku_solution
+    return blank_sudoku, sudoku_solution
 
 def print_sudoku(blank_sudoku, result_sudoku,
                  rows_cols_no=9, cell_width=3, group_by=3,
@@ -93,6 +95,7 @@ def choose_option():
     print("\n1. Wróć do menu głównego")
     print("2. Uzupełnij komórkę")
     print("3. Wyczyść komórkę")
+    print("4. Otrzymaj podpowiedź")
     choice = input("Wybierz opcję: ")
     
     if not choice.isdigit():
@@ -102,7 +105,7 @@ def choose_option():
 
     choice = int(choice)
 
-    if choice <= 0 or choice > 3:
+    if choice <= 0 or choice > 4:
         print("Liczba poza zakresem.")
         sleep(1)
     
@@ -216,6 +219,31 @@ def get_level_difficulty():
 
         sleep(1)
 
+def get_hint(blank_sudoku, sudoku_solution):
+    x, y = get_pos()
+
+    if blank_sudoku[x][y] != 0:
+        print("Tej komórki nie można podpowiedzieć.")
+        sleep(1)
+        return
+
+    print(f"Podpowiedź: w komórce ({y+1}, {x+1}) możesz wpisać {sudoku_solution[x][y]}.")
+
+    print("Kliknij Enter, aby kontynuować...")
+    x = input()
+
+def exit_game():
+    from main import clear, main
+
+    answer = input("Czy na pewno chcesz wyjść z gry? (T/n): ").strip()
+
+    if answer == "T":
+        clear()
+        print("Dziękujemy za grę!")
+        sleep(1)
+        clear()
+        main()
+
 def game():
     import main
     is_modified = True
@@ -234,7 +262,7 @@ def game():
         case _:
             num_holes = 45
 
-    blank_sudoku = generate_sudoku(num_holes)
+    blank_sudoku, sudoku_solution = generate_sudoku(num_holes)
     result_sudoku = [row[:] for row in blank_sudoku]
 
     while True:
@@ -258,14 +286,15 @@ def game():
 
         match choice:
             case 1:
-                main.main()
-                return
+                exit_game()
             case 2:
                 is_modified = True
                 fill_cell(result_sudoku, blank_sudoku)
             case 3:
                 is_modified = True
                 clear_cell(result_sudoku, blank_sudoku)
+            case 4:
+                get_hint(blank_sudoku, sudoku_solution)
             case _:
                 continue
 
