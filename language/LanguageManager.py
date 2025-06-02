@@ -28,15 +28,42 @@ class LanguageManager(object):
         self.debug_mode = debug_mode
         self.translations: dict[str, dict] = {}
 
+        prev_prefix = None
         for prefix in languages_prefixes:
             path = os.path.join(self.languagePacks_path, f"{prefix}{postfix}.json")
             if not os.path.isfile(path):
                 raise FileNotFoundError(f"Missing translation file: {path}")
             with open(path, "r", encoding="utf-8") as f:
                 self.translations[prefix] = json.load(f)
-
+            if prev_prefix is not None:
+                if self.check_if_same_keys(self.translations[prev_prefix], self.translations[prefix]) is False:
+                    raise ValueError(f"Translation files {prev_prefix} and {prefix} have different keys")
+            prev_prefix = prefix
+            if self.translations[prefix] is None:
+                raise ValueError(f"Translation file {path} is empty or invalid")
         self._initialized = True
 
+
+    def __collect_keys(self, obj, prefix=None, result=None):
+        if result is None:
+            result = set()
+        if prefix is None:
+            prefix = ""
+
+        if isinstance(obj, dict):
+            for key, val in obj.items():
+                new_path = key if prefix == "" else f"{prefix}.{key}"
+                result.add(new_path)
+                self.__collect_keys(val, new_path, result)
+
+        elif isinstance(obj, list):
+            for item in obj:
+                self.__collect_keys(item, prefix, result)
+        return result
+    def check_if_same_keys(self, json1, json2) -> bool:
+        keys1 = self.__collect_keys(json1)
+        keys2 = self.__collect_keys(json2)
+        return keys1 == keys2
 
     def set_language(self, lang_code: str):
         if lang_code not in self.translations:
