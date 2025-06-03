@@ -1,0 +1,18 @@
+{
+    "game": {
+        "exit_to_main_menu": "Zurück zum Hauptmenü",
+        "fill_cell": "Zelle ausfüllen",
+        "clear_cell": "Zelle leeren",
+        "get_hint": "Hinweis anzeigen"
+    },
+    "mainmenu": {   
+        "startingmessage": "Ein Spiel, das Ihren Geist anregt!",
+        "start": "Starten",
+        "HowToPlay": "Spielanleitung",
+        "settings": "Einstellungen",
+        "exit": "Beenden",
+        "chooseoption": "Option wählen: ",
+        "exitmessage": "Danke fürs Spielen!",
+        "wrongoption": "Falsche Auswahl, versuchen Sie es erneut."
+    }
+}
