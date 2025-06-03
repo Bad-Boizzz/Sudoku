@@ -39,7 +39,7 @@ def print_mainmenu() -> int:
             case 1:
                 clear()
                 game.game()
-                return 1
+                return -1
             
             #how to play    
             case 2:

@@ -1,4 +1,10 @@
 {
+  "game": {
+    "exit_to_main_menu": "Powrót do menu głównego",
+    "fill_cell": "Wypełnij pole",
+    "clear_cell": "Wyczyść pole",
+    "get_hint": "Uzyskaj podpowiedź"
+  },
   "instruction": {
     "GoBack": "Naciśnij enter, aby wrócić...",
     "InvalidChoice": "Nieprawidłowy wybór, spróbuj ponownie.",

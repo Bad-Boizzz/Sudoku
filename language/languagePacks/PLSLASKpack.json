@@ -1,5 +1,11 @@
 {
-
+    "game":
+    {
+        "exit_to_main_menu": "Wrōć do głōwnygo menu",
+        "fill_cell": "Wypełnij pōło",
+        "clear_cell": "Wyczyść pōło",
+        "get_hint": "Uzyskaj podpowiydź"
+    },
     "mainmenu": 
     {   
         "startingmessage": "Szpil, co pobudzi Twōj usōndek!",

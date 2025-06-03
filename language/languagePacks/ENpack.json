@@ -1,4 +1,12 @@
  {
+
+    "game":
+    {
+        "exit_to_main_menu": "Return to main menu",
+        "fill_cell": "Fill cell",
+        "clear_cell": "Clear cell",
+        "get_hint": "Get hint"
+    },
     "mainmenu": 
     {   
         "startingmessage": "Game that will stimulate your mind!",

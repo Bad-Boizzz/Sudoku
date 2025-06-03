@@ -101,11 +101,16 @@ def print_sudoku(blank_sudoku, result_sudoku,
     change_text_color(fulfillment_color)
 
 def choose_option():
-    print("\n1. Wróć do menu głównego")
-    print("2. Uzupełnij komórkę")
-    print("3. Wyczyść komórkę")
-    print("4. Otrzymaj podpowiedź")
+    # print("\n1. Wróć do menu głównego")
+    # print("2. Uzupełnij komórkę")
+    # print("3. Wyczyść komórkę")
+    # print("4. Otrzymaj podpowiedź")
+    print("1. " + lm.get("game.exit_to_main_menu"))
+    print("2. " + lm.get("game.fill_cell"))
+    print("3. " + lm.get("game.clear_cell"))
+    print("4. " + lm.get("game.get_hint"))
     choice = input("Wybierz opcję: ")
+
     
     if not choice.isdigit():
         print("Podaj liczbę.")
@@ -272,11 +277,8 @@ def exit_game():
     answer = input("Czy na pewno chcesz wyjść z gry? (T/n): ").strip()
 
     if answer == "T":
-        clear()
-        print("Dziękujemy za grę!")
-        sleep(1)
-        clear()
-        main()
+        return 1
+    return -1
 
 def game():
     import main
@@ -331,6 +333,6 @@ def game():
                 get_hint(blank_sudoku, sudoku_solution)
             case _:
                 continue
-
+        break
 if __name__ == "__main__":
     game()
