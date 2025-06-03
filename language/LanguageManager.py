@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json
 import os
-
+import time
 class LanguageManager(object):
     _instance = None
 
@@ -18,11 +18,12 @@ class LanguageManager(object):
                  debug_mode: bool = False):
         if getattr(self, "_initialized", False):
             return
+        
+        self.languagePacks_path = languagePacks_path
+        self.languages_prefixes = languages_prefixes
         if default_lang not in languages_prefixes:
             raise ValueError("default_lang must be in languages_prefixes")
 
-        self.languagePacks_path = languagePacks_path
-        self.languages_prefixes = languages_prefixes
         self.default_lang = default_lang
         self.current_lang = default_lang
         self.debug_mode = debug_mode
@@ -40,7 +41,7 @@ class LanguageManager(object):
 
     def set_language(self, lang_code: str):
         if lang_code not in self.translations:
-            raise ValueError(f"Language '{lang_code}' not available")
+            raise ValueError(f"Language '{lang_code=}' not available")
         self.current_lang = lang_code
 
     def get(self, key: str) -> str:
@@ -52,7 +53,7 @@ class LanguageManager(object):
                 return f"ERROR: missing '{key}' in '{self.current_lang}'"
             node = LanguageManager._lookup(self.translations.get(self.default_lang, {}), parts)
             if node is None:
-                return "Ani w " + str({self.current_lang})+" ani w "+ str({self.default_lang})+" nie ma "+str({key})
+                return f"Ani w {self.current_lang=} ani w {self.default_lang=} nie ma {key=}"
         return node
 
     @staticmethod
@@ -66,19 +67,11 @@ class LanguageManager(object):
                 return None
         return node
 
+    @property
+    def all_languages(self) -> list[str]:
+        return list(self.translations.keys())
+    @property
+    def current_language(self) -> str:
+        return self.current_lang
 if __name__ == "__main__":
-    lm = LanguageManager(
-        languagePacks_path="languagePacks/SamplesForTesting",
-        languages_prefixes=["PL", "EN"],
-        default_lang="EN",
-        postfix="pack",
-        debug_mode=True
-    )
-
-   
-    print(lm.get("ui.menu.file"))              
-    lm.set_language("EN")
-    print(lm.get("testLanguageManagerPY.firstMessage"))              
-    lm.set_language("PL")
-    print(lm.get("testLanguageManagerPY.firstMessage"))   
-    print(lm.get("nima")) 
+    print("This module is not meant to be run directly. Use it as a library in your application.")

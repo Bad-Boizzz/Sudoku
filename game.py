@@ -2,6 +2,15 @@ import random
 from math import ceil
 from time import sleep
 from graphic import change_text_color
+from language.LanguageManager import LanguageManager
+
+lm = LanguageManager(
+    languagePacks_path="language/languagePacks",
+    languages_prefixes=["PL", "EN"],
+    default_lang="PL",
+    postfix="pack",
+    debug_mode=False
+)
 
 def generate_sudoku(num_holes = 48):
     # Generate a complete, valid 9x9 Sudoku solution using backtracking
@@ -131,6 +140,32 @@ def get_pos():
     
     return x, y
 
+def get_pos_and_value_Vector2i():
+    x=-1
+    y=-1
+    while x == -1 or y == -1:
+        agrest = input(f"x y d: ")
+        agrest = agrest.strip()
+        agrest = agrest.split(" ")
+        print(agrest, sep=",")
+
+        if len(agrest) != 3:
+            print("Podaj 3 liczby.")
+            x = -1
+            y = -1  
+            d = -1
+        else:
+            x = int(agrest[0]) - 1
+            y = int(agrest[1]) - 1
+            d = int(agrest[2])
+            if x < 0 or x > 8 or y < 0 or y > 8:
+                print("Liczby poza zakresem.")
+                x = -1
+                y = -1
+                d = -1
+
+    return (x, y, d)
+
 def get_cell_value(x=0, y=0):
     value = 0
     while value == 0:
@@ -147,15 +182,14 @@ def get_cell_value(x=0, y=0):
     return value
 
 def fill_cell(result_sudoku, blank_sudoku):
-    x, y = get_pos()
-    
+    #x, y = get_pos()
+    x,y,d = get_pos_and_value_Vector2i()
     if blank_sudoku[x][y] != 0:
         print("Tej komórki nie można edytować.")
         sleep(1)
         return
     
-    value = get_cell_value(x, y)
-    result_sudoku[x][y] = value
+    result_sudoku[x][y] = d
 
 def clear_cell(result_sudoku, blank_sudoku):
     x, y = get_pos()

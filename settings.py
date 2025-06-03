@@ -1,8 +1,20 @@
 import os
 import csv
 import glob
-
+from language.LanguageManager import LanguageManager
+import time
 # Filenames
+
+
+
+lm = LanguageManager(
+        languagePacks_path="language/languagePacks",
+        languages_prefixes=["PL","EN"],
+        default_lang="PL",
+        postfix="pack",
+        debug_mode=False
+    )
+
 default_settings_file = 'settings.csv'
 
 # Default settings values
@@ -103,66 +115,82 @@ def interactive_settings_menu(settings_dict, translations):
     Show and edit settings using translated text from the language file.
     """
     while True:
-        # Display current settings with translated labels and values
-        print(translations['settings.menu.current_settings'])
-        keys = list(settings_dict.keys())
-        for idx, key in enumerate(keys, start=1):
-            label = translations.get(key, key)
-            raw_val = settings_dict[key]
-            display_val = translations.get(f"settings.value.{raw_val}", raw_val)
-            print(f"  {idx}. {label} = {display_val}")
-        print(f"  0. {translations['settings.menu.exit']}")
-
-        choice = input(translations['settings.prompt.select_setting'] + ' ').strip()
-        if choice == '0':
-            # Exit menu immediately
+        print(f"Settings:")
+        print(f"languages to choose from: {lm.all_languages}")
+        print(f"current language: {lm.current_language}")
+        agrest=input("Do you want to change the settings? (y/N): ").strip().lower()
+        if agrest != 'y':
+            print("Exiting settings menu.")
             break
-
-        try:
-            idx = int(choice) - 1
-            if idx < 0 or idx >= len(keys):
-                raise ValueError
-            key = keys[idx]
-        except ValueError:
-            print(translations['settings.message.invalid_choice'])
+        agrest=input("Enter language prefix: ").strip().upper()
+        if agrest not in lm.all_languages:
+            print(f"Language '{agrest}' not available. Please choose from: {lm.all_languages}")
+            time.sleep(3)
             continue
+        lm.set_language(agrest)
+        print(f"Language set to: {lm.current_language}")
+        time.sleep(3)
+        break
+        # Display current settings with translated labels and values
+        # print(translations['settings.menu.current_settings'])
+        # keys = list(settings_dict.keys())
+        # for idx, key in enumerate(keys, start=1):
+        #     label = translations.get(key, key)
+        #     raw_val = settings_dict[key]
+        #     display_val = translations.get(f"settings.value.{raw_val}", raw_val)
+        #     print(f"  {idx}. {label} = {display_val}")
+        # print(f"  0. {translations['settings.menu.exit']}")
 
-        # Determine new value for the chosen setting
-        if key == 'settings.language':
-            # List translation files, excluding the settings file itself
-            langs = [f for f in list_language_files(pattern='*.csv') if f != default_settings_file]
-            if not langs:
-                print(translations['settings.message.no_languages'])
-                continue
-            print(translations['settings.list.available_languages'])
-            for i, lang in enumerate(langs, start=1):
-                print(f"  {i}. {lang}")
-            sel = input(translations['settings.prompt.select_language'] + ' ').strip()
-            try:
-                li = int(sel) - 1
-                if li < 0 or li >= len(langs):
-                    raise ValueError
-                new_val = langs[li]
-            except ValueError:
-                print(translations['settings.message.invalid_choice'])
-                continue
-        else:
-            prompt = translations['settings.prompt.enter_new_value'].format(
-                key=translations.get(key, key),
-                value=translations.get(f"settings.value.{settings_dict[key]}", settings_dict[key])
-            )
-            new_val = input(prompt + ' ').strip()
+        # choice = input(translations['settings.prompt.select_setting'] + ' ').strip()
+        # if choice == '0':
+        #     # Exit menu immediately
+        #     break
 
-        # Change the setting
-        change_setting(key, new_val)
+        # try:
+        #     idx = int(choice) - 1
+        #     if idx < 0 or idx >= len(keys):
+        #         raise ValueError
+        #     key = keys[idx]
+        # except ValueError:
+        #     print(translations['settings.message.invalid_choice'])
+        #     continue
 
-        # Clear console after change
-        os.system('cls' if os.name == 'nt' else 'clear')
+        # # Determine new value for the chosen setting
+        # if key == 'settings.language':
+        #     # List translation files, excluding the settings file itself
+        #     langs = [f for f in list_language_files(pattern='*.csv') if f != default_settings_file]
+        #     if not langs:
+        #         print(translations['settings.message.no_languages'])
+        #         continue
+        #     print(translations['settings.list.available_languages'])
+        #     for i, lang in enumerate(langs, start=1):
+        #         print(f"  {i}. {lang}")
+        #     sel = input(translations['settings.prompt.select_language'] + ' ').strip()
+        #     try:
+        #         li = int(sel) - 1
+        #         if li < 0 or li >= len(langs):
+        #             raise ValueError
+        #         new_val = langs[li]
+        #     except ValueError:
+        #         print(translations['settings.message.invalid_choice'])
+        #         continue
+        # else:
+        #     prompt = translations['settings.prompt.enter_new_value'].format(
+        #         key=translations.get(key, key),
+        #         value=translations.get(f"settings.value.{settings_dict[key]}", settings_dict[key])
+        #     )
+        #     new_val = input(prompt + ' ').strip()
 
-        # Reload settings and translations if language changed
-        settings_dict = load_settings()
-        if key == 'settings.language':
-            translations = load_translations(settings_dict['settings.language'])
+        # # Change the setting
+        # change_setting(key, new_val)
+
+        # # Clear console after change
+        # os.system('cls' if os.name == 'nt' else 'clear')
+
+        # # Reload settings and translations if language changed
+        # settings_dict = load_settings()
+        # if key == 'settings.language':
+        #     translations = load_translations(settings_dict['settings.language'])
 
 # ---------- Main entry ----------
 def main_settings():
@@ -172,7 +200,7 @@ def main_settings():
     translations = load_translations(settings.get('settings.language', default_settings['settings.language']))
     # Run interactive menu
     interactive_settings_menu(settings, translations)
-    main()
+    #main()
 
 if __name__ == '__main__':
     main_settings()

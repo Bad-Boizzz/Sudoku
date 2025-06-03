@@ -1,4 +1,17 @@
 {
+
+    "mainmenu": 
+    {   
+        "startingmessage": "Szpil, co pobudzi Twōj usōndek!",
+        "start": "Napocznij",
+        "HowToPlay": "Jak grać?",
+        "settings": "Ustawiyniŏ",
+        "exit": "Wyjście",
+        "chooseoption": "Ôbier ôpcyjõ: ",
+        "exitmessage": "Dziynkujymy za szpil!",
+        "wrongoption": "Felerny wybōr, sprōbuj jeszcze roz."
+    },
+
 "instruction": {
 "GoBack": "Wciśnij enter, żeby sie cofnōńć...",
 "InvalidChoice": "Felerny wybōr, sprōbuj jeszcze roz.",

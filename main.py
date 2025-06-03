@@ -1,18 +1,22 @@
+from language.LanguageManager import LanguageManager
+lm = LanguageManager(
+        languagePacks_path="language/languagePacks",
+        languages_prefixes=["PL","EN", "PLSLASK"],
+        default_lang="PLSLASK",
+        postfix="pack",
+        debug_mode=True
+)
+
 import sys
 import os
 import game
 from time import sleep
-from language.LanguageManager import LanguageManager
+
+import settings
 # import settings
 import instruction
 
-lm = LanguageManager(
-        languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN"],
-        default_lang="PL",
-        postfix="pack",
-        debug_mode=False
-    )
+
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -41,13 +45,13 @@ def print_mainmenu() -> int:
             case 2:
                 clear()
                 instruction.instruction()
-                return 1
+                return -1
             
             #settings    
             case 3:
-                #settings.settings()
+                settings.main_settings()
                 clear()
-                return 1
+                return -1
             
             #game exit
             case 4: 
