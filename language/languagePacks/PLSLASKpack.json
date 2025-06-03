@@ -4,7 +4,11 @@
         "exit_to_main_menu": "Wrōć do głōwnygo menu",
         "fill_cell": "Wypełnij pōło",
         "clear_cell": "Wyczyść pōło",
-        "get_hint": "Uzyskaj podpowiydź"
+        "get_hint": "Uzyskaj podpowiydź",
+        "easy_level": "Snadny poziōm",
+        "medium_level": "Postrzedni poziom",
+        "hard_level": "Ciynżki poziōm",
+        "expert_level": "Ekspercki poziōm"
     },
     "mainmenu": 
     {   

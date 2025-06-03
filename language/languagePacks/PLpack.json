@@ -3,7 +3,11 @@
     "exit_to_main_menu": "Powrót do menu głównego",
     "fill_cell": "Wypełnij pole",
     "clear_cell": "Wyczyść pole",
-    "get_hint": "Uzyskaj podpowiedź"
+    "get_hint": "Uzyskaj podpowiedź",
+    "easy_level": "Łatwy poziom",
+    "medium_level": "Średni poziom",
+    "hard_level": "Trudny poziom",
+    "expert_level": "Ekspercki poziom"
   },
   "instruction": {
     "GoBack": "Naciśnij enter, aby wrócić...",

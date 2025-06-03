@@ -244,10 +244,10 @@ def get_level_difficulty():
     while True:
         try:
             clear()
-            print("1. Poziom łatwy")
-            print("2. Poziom średni")
-            print("3. Poziom trudny")
-            print("4. Poziom ekspercki")
+            print("1. " + lm.get("game.easy_level"))
+            print("2. " + lm.get("game.medium_level"))
+            print("3. " + lm.get("game.hard_level"))
+            print("4. " + lm.get("game.expert_level"))
             level = int(input("Wybierz poziom trudności (1-4): "))
             if level in [1, 2, 3, 4]:
                 return level
@@ -270,6 +270,7 @@ def get_hint(blank_sudoku, sudoku_solution):
 
     print("Kliknij Enter, aby kontynuować...")
     x = input()
+
 
 def exit_game():
     from main import clear, main
