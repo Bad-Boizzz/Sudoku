@@ -5,14 +5,45 @@
         "clear_cell": "Zelle leeren",
         "get_hint": "Hinweis anzeigen"
     },
-    "mainmenu": {   
+    "mainmenu": {
         "startingmessage": "Ein Spiel, das Ihren Geist anregt!",
         "start": "Starten",
         "HowToPlay": "Spielanleitung",
         "settings": "Einstellungen",
         "exit": "Beenden",
-        "chooseoption": "Option wählen: ",
-        "exitmessage": "Danke fürs Spielen!",
-        "wrongoption": "Falsche Auswahl, versuchen Sie es erneut."
+        "chooseoption": "Option wählen:",
+        "exitmessage": "Vielen Dank fürs Spielen!",
+        "wrongoption": "Falsche Auswahl, bitte versuchen Sie es erneut."
+    },
+    "instruction": {
+        "GoBack": "Zum Zurückgehen Enter drücken...",
+        "InvalidChoice": "Ungültige Auswahl, bitte versuchen Sie es erneut.",
+        "GoBackToMainMenu": "Zum Zurückkehren ins Hauptmenü Enter drücken...",
+        "ChoseSudoku": "Regeln welcher Sudoku-Variante möchten Sie sehen:\n",
+        "ChoseOption": "Option wählen (1-4):",
+        "ClassicSudoku": "1. Klassisches Sudoku",
+        "DiagonalSudoku": "2. Diagonal-Sudoku",
+        "JigsawSudoku": "3. Jigsaw-Sudoku",
+        "KillerSudoku": "4. Killer-Sudoku",
+        "ClassicIntro": "Ein klassisches Sudoku-Rätsel besteht aus einem Raster mit 9 Blöcken. Jeder Block enthält 9 Kästchen, angeordnet in 3 Zeilen und 3 Spalten.\n",
+        "ClassicDetails1": "Einige Blöcke sind vorausgefüllt und können nicht geändert werden.",
+        "ClassicDetails2": "Um das Rätsel zu lösen, müssen alle 81 Kästchen Zahlen enthalten und die Sudoku-Regeln befolgt werden:\n",
+        "ClassicRule1": "1. Jede Spalte muss alle Ziffern von 1 bis 9 ohne Wiederholungen enthalten.",
+        "ClassicRule2": "2. Jede Zeile muss alle Ziffern von 1 bis 9 ohne Wiederholungen enthalten.",
+        "ClassicRule3": "3. Jeder Block muss alle Ziffern von 1 bis 9 ohne Wiederholungen enthalten.\n",
+
+        "DiagonalIntro": "Ein Diagonal-Sudoku folgt den Standard-Sudoku-Regeln mit einer Änderung.\n",
+        "DiagonalStandardRules": "Standard-Sudoku-Regeln:",
+        "DiagonalExtra": "Zusätzlich müssen beide Hauptdiagonalen alle Ziffern von 1 bis 9 ohne Wiederholungen enthalten.\n",
+
+        "JigsawIntro": "Ein Jigsaw-Sudoku ist eine Variante des Standard-Sudoku, bei der die 9 normalen 3x3-Blöcke durch 9 unregelmäßig geformte Regionen ersetzt werden.\n",
+        "JigsawChange": "Das Rätsel folgt den Standard-Sudoku-Regeln mit einer Änderung:",
+        "JigsawRule3": "3. Jede unregelmäßige Region muss alle Ziffern von 1 bis 9 ohne Wiederholungen enthalten.\n",
+
+        "KillerIntro": "Ein Killer-Sudoku folgt den Standard-Sudoku-Regeln mit zusätzlichen Regeln:\n",
+        "KillerCage1": "Zusätzlich ist das Raster in Käfige unterteilt, die mit gepunkteten oder fetten Linien umrandet sind.",
+        "KillerCage2": "Die Zahl in der oberen Ecke des Käfigs zeigt die Zielsumme, die die Ziffern in diesem Käfig ergeben müssen.",
+        "KillerCage3": "In jedem Käfig dürfen Ziffern nicht wiederholt werden.\n",
+        "GoBackToMainMenuOption": "Zurück zum Hauptmenü"
     }
 }
