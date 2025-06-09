@@ -101,26 +101,22 @@ def print_sudoku(blank_sudoku, result_sudoku,
     change_text_color(fulfillment_color)
 
 def choose_option():
-    # print("\n1. Wróć do menu głównego")
-    # print("2. Uzupełnij komórkę")
-    # print("3. Wyczyść komórkę")
-    # print("4. Otrzymaj podpowiedź")
     print("1. " + lm.get("game.exit_to_main_menu"))
     print("2. " + lm.get("game.fill_cell"))
     print("3. " + lm.get("game.clear_cell"))
     print("4. " + lm.get("game.get_hint"))
-    choice = input("Wybierz opcję: ")
+    choice = input(lm.get("mainmenu.chooseoption"))
 
     
     if not choice.isdigit():
-        print("Podaj liczbę.")
+        print(lm.get("game.enter_number"))
         sleep(1)
         return 0
 
     choice = int(choice)
 
     if choice <= 0 or choice > 4:
-        print("Liczba poza zakresem.")
+        print(lm.get("game.number_out_of_range"))
         sleep(1)
     
     return choice
@@ -129,17 +125,17 @@ def get_pos():
     x = -1
     y = -1
     while x == -1 or y == -1:
-        x = input("Podaj wiersz (1-9) komórki: ")
-        y = input("Podaj kolumnę (1-9) komórki: ")
+        x = input(lm.get("game.enter_row"))
+        y = input(lm.get("game.enter_column"))
         if not x.isdigit() or not y.isdigit():
-            print("Podaj liczby.")
+            print(lm.get("game.enter_numbers"))
             x = -1
             y = -1
         else:
             x = int(x) - 1
             y = int(y) - 1
             if x < 0 or x > 8 or y < 0 or y > 8:
-                print("Liczby poza zakresem.")
+                print(lm.get("game.numbers_out_of_range"))
                 x = -1
                 y = -1
     
@@ -149,13 +145,12 @@ def get_pos_and_value_Vector2i():
     x=-1
     y=-1
     while x == -1 or y == -1:
-        agrest = input(f"x y d: ")
+        agrest = input(f"y x d: ")
         agrest = agrest.strip()
         agrest = agrest.split(" ")
-        print(agrest, sep=",")
 
         if len(agrest) != 3:
-            print("Podaj 3 liczby.")
+            print(lm.get("game.enter_three_numbers"))
             x = -1
             y = -1  
             d = -1
@@ -164,7 +159,7 @@ def get_pos_and_value_Vector2i():
             y = int(agrest[1]) - 1
             d = int(agrest[2])
             if x < 0 or x > 8 or y < 0 or y > 8:
-                print("Liczby poza zakresem.")
+                print(lm.get("game.numbers_out_of_range"))
                 x = -1
                 y = -1
                 d = -1
@@ -174,23 +169,22 @@ def get_pos_and_value_Vector2i():
 def get_cell_value(x=0, y=0):
     value = 0
     while value == 0:
-        value = input(f"Podaj wartość (1-9) do komórki ({y+1}, {x+1}): ")
+        value = input(lm.get("game.enter_value_for_cell") + f" ({y+1}, {x+1}): ")
         if not value.isdigit():
-            print("Podaj liczbę.")
+            print(lm.get("game.enter_number"))
             value = 0
         else:
             value = int(value)
             if value < 1 or value > 9:
-                print("Liczba poza zakresem.")
+                print(lm.get("game.number_out_of_range"))
                 value = 0
     
     return value
 
 def fill_cell(result_sudoku, blank_sudoku):
-    #x, y = get_pos()
     x,y,d = get_pos_and_value_Vector2i()
     if blank_sudoku[x][y] != 0:
-        print("Tej komórki nie można edytować.")
+        print(lm.get("game.non_editable_cell"))
         sleep(1)
         return
     
@@ -200,7 +194,7 @@ def clear_cell(result_sudoku, blank_sudoku):
     x, y = get_pos()
     
     if blank_sudoku[x][y] != 0:
-        print("Tej komórki nie można wyczyścić.")
+        print(lm.get("game.non_clearable_cell"))
         sleep(1)
         return
     
@@ -248,13 +242,13 @@ def get_level_difficulty():
             print("2. " + lm.get("game.medium_level"))
             print("3. " + lm.get("game.hard_level"))
             print("4. " + lm.get("game.expert_level"))
-            level = int(input("Wybierz poziom trudności (1-4): "))
+            level = int(input(lm.get("mainmenu.chooseoption")))
             if level in [1, 2, 3, 4]:
                 return level
             else:
-                print("Wybierz liczbę z zakresu 1-4.")
+                print(lm.get("game.number_out_of_range"))
         except ValueError:
-            print("Podaj poprawną wartość.")
+            print(lm.get("game.enter_number"))
 
         sleep(1)
 
@@ -262,22 +256,24 @@ def get_hint(blank_sudoku, sudoku_solution):
     x, y = get_pos()
 
     if blank_sudoku[x][y] != 0:
-        print("Tej komórki nie można podpowiedzieć.")
+        print(lm.get("game.no_hint_cell"))
         sleep(1)
         return
 
-    print(f"Podpowiedź: w komórce ({y+1}, {x+1}) możesz wpisać {sudoku_solution[x][y]}.")
+    print(lm.get("game.hint_message")
+          .replace("$pos", f"({y+1}, {x+1})")
+          .replace("$value", f"{sudoku_solution[x][y]}"))
 
-    print("Kliknij Enter, aby kontynuować...")
+    print(lm.get("game.click_enter_to_continue"))
     x = input()
 
 
 def exit_game():
     from main import clear, main
 
-    answer = input("Czy na pewno chcesz wyjść z gry? (T/n): ").strip()
+    answer = input(lm.get("game.exit_confirmation")).strip()
 
-    if answer == "T":
+    if answer == "y":
         return 1
     return -1
 
@@ -310,10 +306,10 @@ def game():
         if is_modified and check_if_game_finished(result_sudoku):
             if check_if_result_is_valid(result_sudoku):
                 change_text_color("green")
-                print("Gratulacje! Ukończyłeś sudoku!")
+                print(lm.get("game.congratulations"))
             else:
                 change_text_color("red")
-                print("Niestety, rozwiązanie jest nieprawidłowe.")
+                print(lm.get("game.unfortunately"))
             
             sleep(2)
             change_text_color("white")
@@ -323,7 +319,7 @@ def game():
 
         match choice:
             case 1:
-                if exit_game():
+                if exit_game() == 1:
                     break
             case 2:
                 is_modified = True
