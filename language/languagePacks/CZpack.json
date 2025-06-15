@@ -42,5 +42,26 @@
         "KillerCage2": "Číslo zobrazené v horním rohu klece je cílový součet, kterého musí číslice v kleci dosáhnout.",
         "KillerCage3": "V každé kleci se číslice nesmí opakovat.\n",
         "GoBackToMainMenuOption": "Návrat do hlavního menu"
+    },
+    "settings": {
+        "title": "Nastavení",
+        "current_settings": "Aktuální nastavení: ",
+        "current_language": "Aktuální jazyk: ",
+        "available_languages": "Dostupné jazyky",
+        "change_prompt": "Chcete změnit nastavení? (y/N)",
+        "exit": "Ukončení menu nastavení.",
+        "enter_language": "Zadejte předponu jazyka ",
+        "invalid_language": "Jazyk '{0}' není dostupný. Vyberte z: {1}",
+        "language_set": "Jazyk nastaven na: ",
+        "color": "Barva hracího pole",
+        "level": "Úroveň obtížnosti",
+        "select_language": "Vyberte jazyk:",
+        "enter_new_value": "Zadejte novou hodnotu pro {key} (aktuálně: {value}): ",
+        "language_not_found": "Nenalezen žádný jazyk s danou předponou.",
+        "no_languages": "Žádné dostupné jazyky.",
+        "invalid_choice": "Neplatná volba, zkuste to znovu.",
+        "easy": "Lehká",
+        "medium": "Střední",
+        "hard": "Těžká"
     }
 }
