@@ -49,5 +49,27 @@
 "KillerCage2": "Cyfra we gōrnym rogu klatki ôznaczŏ sumã, do keryj muszōm sie dodŏwać cyfry we tyj klatce.",
 "KillerCage3": "We kożdyj klatce cyfry sie niy mogōm powtŏrzać.\n",
 "GoBackToMainMenuOption": "Wrōć do głōwnygo menu"
+},
+  "settings": {
+    "title": "Ustawiynia",
+    "current_settings": "Aktualne ustawiynia: ",
+    "current_language": "Aktualny jynzyk: ",
+    "available_languages": "Dostympne jynzyki: ",
+    "change_prompt": "Chcesz zmiynić ustawiynia? (y/N)",
+    "exit": "Zamykům menu ustawiyniy.",
+    "enter_language": "Podyj prefix jynzyka ",
+    "invalid_language": "Jynzyk '{0}' niyma dostympny. Wybiyrz z: {1}",
+    "language_set": "Jynzyk ustawiony na: ",
+    "color": "Farba planszy",
+    "level": "Poziōm trudności",
+
+    "select_language": "Wybiyrz jynzyk:",
+    "enter_new_value": "Podyj nowo wartość do {key} (terŏz: {value}): ",
+    "language_not_found": "Niy znodziono jynzyka z podanym prefixym.",
+    "no_languages": "Niy ma dostympnych jynzykōw.",
+    "invalid_choice": "Niydobry wybōr, sprōbuj jeszcze roz.",
+    "easy": "Łatwy",
+    "medium": "Średni",
+    "hard": "Trudny"
 }
 }

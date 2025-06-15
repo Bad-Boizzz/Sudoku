@@ -45,5 +45,27 @@
         "KillerCage2": "El número mostrado en la esquina superior de la jaula es la suma objetivo que deben alcanzar los dígitos dentro de esa jaula.",
         "KillerCage3": "En cada jaula no se pueden repetir dígitos.\n",
         "GoBackToMainMenuOption": "Volver al menú principal"
-    }
+    },
+  "settings": {
+    "title": "Configuración",
+    "current_settings": "Configuración actual: ",
+    "current_language": "Idioma actual: ",
+    "available_languages": "Idiomas disponibles",
+    "change_prompt": "¿Deseas cambiar la configuración? (y/N)",
+    "exit": "Cerrando el menú de configuración.",
+    "enter_language": "Introduce el prefijo del idioma ",
+    "invalid_language": "El idioma '{0}' no está disponible. Elige entre: {1}",
+    "language_set": "Idioma establecido en: ",
+    "color": "Color del tablero",
+    "level": "Nivel de dificultad",
+
+    "select_language": "Elige un idioma:",
+    "enter_new_value": "Introduce un nuevo valor para {key} (actualmente: {value}): ",
+    "language_not_found": "No se encontró un idioma con el prefijo proporcionado.",
+    "no_languages": "No hay idiomas disponibles.",
+    "invalid_choice": "Selección no válida, inténtalo de nuevo.",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil"
+}
 }

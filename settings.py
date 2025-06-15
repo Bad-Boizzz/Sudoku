@@ -3,13 +3,17 @@ import csv
 import glob
 from language.LanguageManager import LanguageManager
 import time
+
+
 # Filenames
 
 
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN"],
+        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
         default_lang="PL",
         postfix="pack",
         debug_mode=False
@@ -75,32 +79,32 @@ def change_setting(key, value, filename=default_settings_file):
 
 # ---------- Translations handling ----------
 
-def load_translations(lang_file):
-    """
-    Load translation pairs from a CSV file into a dict.
-    Supports .txt fallback by converting to .csv if needed.
-    CSV format: key,value  (all keys must start with 'settings.')
-    """
-    translations = {}
-    path = os.path.join(current_dir, lang_file)
-    if not os.path.exists(path):
-        base, ext = os.path.splitext(lang_file)
-        alt_file = base + '.csv'
-        alt_path = os.path.join(current_dir, alt_file)
-        if os.path.exists(alt_path):
-            lang_file = alt_file
-            path = alt_path
-        else:
-            raise FileNotFoundError(f"Translation file '{lang_file}' not found.")
-    with open(path, mode='r', newline='', encoding='utf-8') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            if len(row) >= 2:
-                key = row[0].strip()
-                if not key.startswith('settings.'):
-                    key = 'settings.' + key
-                translations[key] = row[1].strip()
-    return translations
+# def load_translations(lang_file):
+#     """
+#     Load translation pairs from a CSV file into a dict.
+#     Supports .txt fallback by converting to .csv if needed.
+#     CSV format: key,value  (all keys must start with 'settings.')
+#     """
+#     translations = {}
+#     path = os.path.join(current_dir, lang_file)
+#     if not os.path.exists(path):
+#         base, ext = os.path.splitext(lang_file)
+#         alt_file = base + '.csv'
+#         alt_path = os.path.join(current_dir, alt_file)
+#         if os.path.exists(alt_path):
+#             lang_file = alt_file
+#             path = alt_path
+#         else:
+#             raise FileNotFoundError(f"Translation file '{lang_file}' not found.")
+#     with open(path, mode='r', newline='', encoding='utf-8') as csvfile:
+#         reader = csv.reader(csvfile)
+#         for row in reader:
+#             if len(row) >= 2:
+#                 key = row[0].strip()
+#                 if not key.startswith('settings.'):
+#                     key = 'settings.' + key
+#                 translations[key] = row[1].strip()
+#     return translations
 
 # ---------- Utility ----------
 
@@ -110,26 +114,29 @@ def list_language_files(directory=current_dir, pattern='*.csv'):
 
 # ---------- Interactive menu ----------
 
-def interactive_settings_menu(settings_dict, translations):
+def interactive_settings_menu():
     """
     Show and edit settings using translated text from the language file.
     """
+    
     while True:
-        print(f"Settings:")
-        print(f"languages to choose from: {lm.all_languages}")
-        print(f"current language: {lm.current_language}")
-        agrest=input("Do you want to change the settings? (y/N): ").strip().lower()
+        print(lm.get("settings.title"))
+        print(lm.get("settings.available_languages") + str(lm.all_languages) )
+        print(lm.get("settings.current_language") + lm.current_language)
+        agrest=input(lm.get("settings.change_prompt")).strip().lower()
         if agrest != 'y':
-            print("Exiting settings menu.")
+            print(lm.get("settings.exit"))
             break
-        agrest=input("Enter language prefix: ").strip().upper()
+        agrest=input(lm.get("settings.enter_language")).strip().upper()
         if agrest not in lm.all_languages:
-            print(f"Language '{agrest}' not available. Please choose from: {lm.all_languages}")
+            print(lm.get("settings.invalid_language").format(agrest, lm.all_languages ))
             time.sleep(3)
+            clear()
             continue
         lm.set_language(agrest)
-        print(f"Language set to: {lm.current_language}")
-        time.sleep(3)
+        print(lm.get("settings.language_set") + lm.current_language)
+        time.sleep(1)
+        
         break
         # Display current settings with translated labels and values
         # print(translations['settings.menu.current_settings'])
@@ -195,11 +202,12 @@ def interactive_settings_menu(settings_dict, translations):
 # ---------- Main entry ----------
 def main_settings():
     # Load settings
-    settings = load_settings()
+    
     # Load translations based on language setting
-    translations = load_translations(settings.get('settings.language', default_settings['settings.language']))
+    # translations = load_translations(settings.get('settings.language', default_settings['settings.language']))
+    
     # Run interactive menu
-    interactive_settings_menu(settings, translations)
+    interactive_settings_menu()
     #main()
 
 if __name__ == '__main__':

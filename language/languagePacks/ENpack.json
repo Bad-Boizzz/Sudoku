@@ -49,5 +49,27 @@
     "KillerCage3": "In each cage digits cannot be repeated.\n",
     "GoBackToMainMenuOption": "Return to main menu"
     
-  }
+  },
+  "settings": {
+    "title": "Settings",
+    "current_settings": "Current settings: ",
+    "current_language": "Current language: ",
+    "available_languages": "Available languages",
+    "change_prompt": "Do you want to change the settings? (y/N)",
+    "exit": "Exiting the settings menu.",
+    "enter_language": "Enter language prefix ",
+    "invalid_language": "Language '{0}' is not available. Choose from: {1}",
+    "language_set": "Language set to: ",
+    "color": "Board color",
+    "level": "Difficulty level",
+
+    "select_language": "Select language:",
+    "enter_new_value": "Enter a new value for {key} (currently: {value}): ",
+    "language_not_found": "No language found with the given prefix.",
+    "no_languages": "No available languages.",
+    "invalid_choice": "Invalid choice, please try again.",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+    }
  }
