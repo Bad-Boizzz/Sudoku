@@ -50,5 +50,27 @@
         "chooseoption": "Wybierz opcję: ",
         "exitmessage": "Dziękujemy za grę!",
         "wrongoption": "Niepoprawny wybór, spróbuj ponownie."
+    },
+  "settings": {
+        "title": "Ustawienia",
+        "current_settings": "Aktualne ustawienia: ",
+        "current_language": "Aktualny język: ",
+        "available_languages": "Dostępne języki",
+        "change_prompt": "Czy chcesz zmienić ustawienia?",
+        "exit": "Zamykam menu ustawień.",
+        "enter_language": "Podaj prefix języka ",
+        "invalid_language": "Język '{0}' nie jest dostępny. Wybierz spośród: {1}",
+        "language_set": "Język ustawiony na: ",
+        "color": "Kolor planszy",
+        "level": "Poziom trudności",
+
+        "select_language": "Wybierz język:",
+        "enter_new_value": "Podaj nową wartość dla {key} (obecnie: {value}): ",
+        "language_not_found": "Nie znaleziono języka o podanym prefiksie.",
+        "no_languages": "Brak dostępnych języków.",
+        "invalid_choice": "Nieprawidłowy wybór, spróbuj ponownie.",
+        "easy": "Łatwy",
+        "medium": "Średni",
+        "hard": "Trudny"
     }
- }
+  }
