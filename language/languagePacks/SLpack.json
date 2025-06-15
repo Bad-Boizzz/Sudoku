@@ -43,4 +43,25 @@
         "KillerCage3": "V každej klietke sa číslice nesmú opakovať.\n",
         "GoBackToMainMenuOption": "Návrat do hlavného menu"
     },
+    "settings": {
+        "title": "Nastavenia",
+        "current_settings": "Aktuálne nastavenia: ",
+        "current_language": "Aktuálny jazyk: ",
+        "available_languages": "Dostupné jazyky",
+        "change_prompt": "Chcete zmeniť nastavenia? (y/N)",
+        "exit": "Ukončenie menu nastavení.",
+        "enter_language": "Zadajte predponu jazyka ",
+        "invalid_language": "Jazyk '{0}' nie je dostupný. Vyberte z: {1}",
+        "language_set": "Jazyk nastavený na: ",
+        "color": "Farba hracej dosky",
+        "level": "Úroveň obtiažnosti",
+        "select_language": "Vyberte jazyk:",
+        "enter_new_value": "Zadajte novú hodnotu pre {key} (aktuálne: {value}): ",
+        "language_not_found": "Nenašiel sa žiadny jazyk s danou predponou.",
+        "no_languages": "Žiadne dostupné jazyky.",
+        "invalid_choice": "Neplatná voľba, skúste to znova.",
+        "easy": "Ľahká",
+        "medium": "Stredná",
+        "hard": "Ťažká"
+    }
 }
