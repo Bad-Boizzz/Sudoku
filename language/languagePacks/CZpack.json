@@ -1,0 +1,46 @@
+{
+    "game": {
+        "exit_to_main_menu": "Zpět do hlavního menu",
+        "fill_cell": "Vyplnit políčko",
+        "clear_cell": "Vyčistit políčko",
+        "get_hint": "Získat nápovědu"
+    },
+    "mainmenu": {
+        "startingmessage": "Hra, která stimuluje vaši mysl!",
+        "start": "Start",
+        "HowToPlay": "Jak hrát?",
+        "settings": "Nastavení",
+        "exit": "Konec",
+        "chooseoption": "Vyberte možnost: ",
+        "exitmessage": "Děkujeme za hraní!",
+        "wrongoption": "Špatná volba, zkuste to znovu."
+    },
+    "instruction": {
+        "GoBack": "Stiskněte Enter pro návrat...",
+        "InvalidChoice": "Neplatná volba, zkuste to znovu.",
+        "GoBackToMainMenu": "Stiskněte Enter pro návrat do hlavního menu...",
+        "ChoseSudoku": "Pravidla kterého sudoku chcete vidět:\n",
+        "ChoseOption": "Vyberte možnost (1-4):",
+        "ClassicSudoku": "1. Klasické Sudoku",
+        "DiagonalSudoku": "2. Diagonální Sudoku",
+        "JigsawSudoku": "3. Jigsaw Sudoku",
+        "KillerSudoku": "4. Killer Sudoku",
+        "ClassicIntro": "Standardní Sudoku puzzle se skládá z mřížky o 9 blocích. Každý blok obsahuje 9 políček uspořádaných do 3 řádků a 3 sloupců.\n",
+        "ClassicDetails1": "Některé bloky budou předvyplněné a nelze je změnit.",
+        "ClassicDetails2": "Pro vyřešení puzzle musí všech 81 políček obsahovat čísla a musí být dodržena pravidla Sudoku:\n",
+        "ClassicRule1": "1. Každý sloupec musí obsahovat všechny číslice od 1 do 9 bez opakování.",
+        "ClassicRule2": "2. Každý řádek musí obsahovat všechny číslice od 1 do 9 bez opakování.",
+        "ClassicRule3": "3. Každý blok musí obsahovat všechny číslice od 1 do 9 bez opakování.\n",
+        "DiagonalIntro": "Diagonální Sudoku puzzle dodržuje standardní pravidla Sudoku s jednou změnou.\n",
+        "DiagonalStandardRules": "Standardní pravidla Sudoku:",
+        "DiagonalExtra": "Navíc obě hlavní diagonály musí obsahovat všechny číslice od 1 do 9 bez opakování.\n",
+        "JigsawIntro": "Jigsaw Sudoku puzzle je varianta standardního Sudoku, kde jsou standardní 3x3 bloky nahrazeny 9 nepravidelně tvarovanými oblastmi.\n",
+        "JigsawChange": "Puzzle dodržuje standardní pravidla Sudoku s jednou změnou:",
+        "JigsawRule3": "3. Každá nepravidelná oblast musí obsahovat všechny číslice od 1 do 9 bez opakování.\n",
+        "KillerIntro": "Killer Sudoku puzzle dodržuje standardní pravidla Sudoku s dalšími pravidly:\n",
+        "KillerCage1": "Navíc je mřížka rozdělena na klece, ohraničené tečkovanými nebo tučnými čarami.",
+        "KillerCage2": "Číslo zobrazené v horním rohu klece je cílový součet, kterého musí číslice v kleci dosáhnout.",
+        "KillerCage3": "V každé kleci se číslice nesmí opakovat.\n",
+        "GoBackToMainMenuOption": "Návrat do hlavního menu"
+    }
+}
