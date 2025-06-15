@@ -47,25 +47,25 @@
         "GoBackToMainMenuOption": "Volver al menú principal"
     },
   "settings": {
-        "title": "Ustawienia",
-        "current_settings": "Aktualne ustawienia: ",
-        "current_language": "Aktualny język: ",
-        "available_languages": "Dostępne języki",
-        "change_prompt": "Czy chcesz zmienić ustawienia?",
-        "exit": "Zamykam menu ustawień.",
-        "enter_language": "Podaj prefix języka ",
-        "invalid_language": "Język '{0}' nie jest dostępny. Wybierz spośród: {1}",
-        "language_set": "Język ustawiony na: ",
-        "color": "Kolor planszy",
-        "level": "Poziom trudności",
+    "title": "Configuración",
+    "current_settings": "Configuración actual: ",
+    "current_language": "Idioma actual: ",
+    "available_languages": "Idiomas disponibles",
+    "change_prompt": "¿Deseas cambiar la configuración?",
+    "exit": "Cerrando el menú de configuración.",
+    "enter_language": "Introduce el prefijo del idioma ",
+    "invalid_language": "El idioma '{0}' no está disponible. Elige entre: {1}",
+    "language_set": "Idioma establecido en: ",
+    "color": "Color del tablero",
+    "level": "Nivel de dificultad",
 
-        "select_language": "Wybierz język:",
-        "enter_new_value": "Podaj nową wartość dla {key} (obecnie: {value}): ",
-        "language_not_found": "Nie znaleziono języka o podanym prefiksie.",
-        "no_languages": "Brak dostępnych języków.",
-        "invalid_choice": "Nieprawidłowy wybór, spróbuj ponownie.",
-        "easy": "Łatwy",
-        "medium": "Średni",
-        "hard": "Trudny"
-    }
+    "select_language": "Elige un idioma:",
+    "enter_new_value": "Introduce un nuevo valor para {key} (actualmente: {value}): ",
+    "language_not_found": "No se encontró un idioma con el prefijo proporcionado.",
+    "no_languages": "No hay idiomas disponibles.",
+    "invalid_choice": "Selección no válida, inténtalo de nuevo.",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil"
+}
 }
