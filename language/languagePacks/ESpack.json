@@ -1,0 +1,71 @@
+{
+    "game": {
+        "exit_to_main_menu": "Volver al menú principal",
+        "fill_cell": "Rellenar celda",
+        "clear_cell": "Limpiar celda",
+        "get_hint": "Obtener pista"
+    },
+    "mainmenu": {   
+        "startingmessage": "¡Un juego que estimulará tu mente!",
+        "start": "Iniciar",
+        "HowToPlay": "¿Cómo jugar?",
+        "settings": "Configuración",
+        "exit": "Salir",
+        "chooseoption": "Elige una opción: ",
+        "exitmessage": "¡Gracias por jugar!",
+        "wrongoption": "Opción incorrecta, inténtalo de nuevo."
+    },
+    "instruction": {
+        "GoBack": "Presiona enter para volver...",
+        "InvalidChoice": "Opción no válida, inténtalo de nuevo.",
+        "GoBackToMainMenu": "Presiona enter para volver al menú principal...",
+        "ChoseSudoku": "Reglas de qué sudoku te gustaría ver:\n",
+        "ChoseOption": "Elige la opción (1-4):",
+        "ClassicSudoku": "1. Sudoku Clásico",
+        "DiagonalSudoku": "2. Sudoku Diagonal",
+        "JigsawSudoku": "3. Sudoku Jigsaw",
+        "KillerSudoku": "4. Sudoku Killer",
+        "ClassicIntro": "Un sudoku clásico consiste en una cuadrícula de 9 bloques. Cada bloque contiene 9 celdas organizadas en 3 filas y 3 columnas.\n",
+        "ClassicDetails1": "Algunos bloques vendrán pre-rellenados y no se pueden modificar.",
+        "ClassicDetails2": "Para resolver el puzzle, las 81 celdas deben contener números siguiendo las reglas del Sudoku:\n",
+        "ClassicRule1": "1. Cada columna debe contener todos los dígitos del 1 al 9, sin repeticiones.",
+        "ClassicRule2": "2. Cada fila debe contener todos los dígitos del 1 al 9, sin repeticiones.",
+        "ClassicRule3": "3. Cada bloque debe contener todos los dígitos del 1 al 9, sin repeticiones.\n",
+
+        "DiagonalIntro": "El Sudoku Diagonal sigue las reglas estándar del Sudoku con un cambio.\n",
+        "DiagonalStandardRules": "Reglas estándar del sudoku:",
+        "DiagonalExtra": "Adicionalmente, ambas diagonales principales deben contener todos los dígitos del 1 al 9, sin repeticiones.\n",
+
+        "JigsawIntro": "El Sudoku Jigsaw es una variante del sudoku estándar donde los 9 bloques regulares de 3x3 son reemplazados por 9 regiones de forma irregular.\n",
+        "JigsawChange": "El puzzle sigue las reglas estándar del sudoku con un cambio:",
+        "JigsawRule3": "3. Cada región irregular debe contener todos los dígitos del 1 al 9, sin repeticiones.\n",
+
+        "KillerIntro": "El Sudoku Killer sigue las reglas estándar del sudoku con reglas adicionales:\n",
+        "KillerCage1": "Además, la cuadrícula está dividida en jaulas, marcadas con líneas punteadas o gruesas.",
+        "KillerCage2": "El número mostrado en la esquina superior de la jaula es la suma objetivo que deben alcanzar los dígitos dentro de esa jaula.",
+        "KillerCage3": "En cada jaula no se pueden repetir dígitos.\n",
+        "GoBackToMainMenuOption": "Volver al menú principal"
+    },
+  "settings": {
+    "title": "Configuración",
+    "current_settings": "Configuración actual: ",
+    "current_language": "Idioma actual: ",
+    "available_languages": "Idiomas disponibles",
+    "change_prompt": "¿Deseas cambiar la configuración? (y/N)",
+    "exit": "Cerrando el menú de configuración.",
+    "enter_language": "Introduce el prefijo del idioma ",
+    "invalid_language": "El idioma '{0}' no está disponible. Elige entre: {1}",
+    "language_set": "Idioma establecido en: ",
+    "color": "Color del tablero",
+    "level": "Nivel de dificultad",
+
+    "select_language": "Elige un idioma:",
+    "enter_new_value": "Introduce un nuevo valor para {key} (actualmente: {value}): ",
+    "language_not_found": "No se encontró un idioma con el prefijo proporcionado.",
+    "no_languages": "No hay idiomas disponibles.",
+    "invalid_choice": "Selección no válida, inténtalo de nuevo.",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil"
+}
+}

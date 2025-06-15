@@ -1,0 +1,75 @@
+{
+  "game": {
+    "exit_to_main_menu": "Voltar ao menu principal",
+    "fill_cell": "Preencher célula",
+    "clear_cell": "Limpar célula",
+    "get_hint": "Obter dica",
+    "easy_level": "Nível fácil",
+    "medium_level": "Nível médio",
+    "hard_level": "Nível difícil",
+    "expert_level": "Nível expert"
+  },
+  "instruction": {
+    "GoBack": "Pressione enter para voltar...",
+    "InvalidChoice": "Escolha inválida, tente novamente.",
+    "GoBackToMainMenu": "Pressione enter para voltar ao menu principal...",
+    "ChoseSudoku": "De qual Sudoku você quer ver as regras:\n",
+    "ChoseOption": "Escolha uma opção (1-4):",
+    "ClassicSudoku": "1. Sudoku Clássico",
+    "DiagonalSudoku": "2. Sudoku Diagonal",
+    "JigsawSudoku": "3. Sudoku Irregular",
+    "KillerSudoku": "4. Killer Sudoku",
+    "ClassicIntro": "O quebra-cabeça Sudoku padrão consiste em uma grade de 9 blocos. Cada bloco contém 9 células dispostas em 3 linhas e 3 colunas.\n",
+    "ClassicDetails1": "Algumas células são pré-preenchidas e não podem ser alteradas.",
+    "ClassicDetails2": "Para resolver o quebra-cabeça, todas as 81 células devem conter números, e as seguintes regras devem ser seguidas:\n",
+    "ClassicRule1": "1. Cada coluna deve conter todos os dígitos de 1 a 9, sem repetições.",
+    "ClassicRule2": "2. Cada linha deve conter todos os dígitos de 1 a 9, sem repetições.",
+    "ClassicRule3": "3. Cada bloco 3x3 deve conter todos os dígitos de 1 a 9, sem repetições.\n",
+    
+    "DiagonalIntro": "O Sudoku Diagonal mantém as regras padrão do Sudoku com uma mudança.\n",
+    "DiagonalStandardRules": "Regras padrão do Sudoku:",
+    "DiagonalExtra": "Além disso, ambas as diagonais principais devem conter todos os dígitos de 1 a 9, sem repetições.\n",
+    
+    "JigsawIntro": "O Sudoku Irregular é uma variação do Sudoku onde os 9 blocos padrão 3x3 são substituídos por 9 regiões com formatos irregulares.\n",
+    "JigsawChange": "O quebra-cabeça mantém as regras padrão do Sudoku com uma mudança:",
+    "JigsawRule3": "3. Cada região irregular deve conter todos os dígitos de 1 a 9, sem repetições.\n",
+    
+    "KillerIntro": "O Killer Sudoku mantém as regras padrão do Sudoku com regras adicionais:\n",
+    "KillerCage1": "Além disso, a grade é dividida em gaiolas, marcadas por linhas tracejadas ou em negrito.",
+    "KillerCage2": "O número no canto superior da gaiola indica a soma que os dígitos dentro dela devem alcançar.",
+    "KillerCage3": "Em cada gaiola, os dígitos não podem se repetir.\n",
+    "GoBackToMainMenuOption": "Voltar ao menu principal"
+  },
+  "mainmenu": {
+    "startingmessage": "Um jogo que vai desafiar sua mente!",
+    "start": "Começar",
+    "HowToPlay": "Como jogar?",
+    "settings": "Configurações",
+    "exit": "Sair",
+    "chooseoption": "Escolha uma opção: ",
+    "exitmessage": "Obrigado por jogar!",
+    "wrongoption": "Opção incorreta, tente novamente."
+  },
+  "settings": {
+    "title": "Configurações",
+    "current_settings": "Configurações atuais: ",
+    "current_language": "Idioma atual: ",
+    "available_languages": "Idiomas disponíveis",
+    "change_prompt": "Deseja alterar as configurações? (y/N)",
+    "exit": "Saindo do menu de configurações.",
+    "enter_language": "Digite o prefixo do idioma ",
+    "invalid_language": "O idioma '{0}' não está disponível. Escolha entre: {1}",
+    "language_set": "Idioma definido para: ",
+    "color": "Cor do tabuleiro",
+    "level": "Nível de dificuldade",
+
+    "select_language": "Selecione o idioma:",
+    "enter_new_value": "Digite um novo valor para {key} (atualmente: {value}): ",
+    "language_not_found": "Idioma com o prefixo informado não encontrado.",
+    "no_languages": "Nenhum idioma disponível.",
+    "invalid_choice": "Escolha inválida, tente novamente.",
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil"
+}
+}

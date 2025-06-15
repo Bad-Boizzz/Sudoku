@@ -1,12 +1,12 @@
 from time import sleep
-from main import print_mainmenu
+from main import print_initial_message
 from typing import Callable, Optional
 from language.LanguageManager import LanguageManager
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","ENG"],
-        default_lang="ENG",
+        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
+        default_lang="PL",
         postfix="pack",
         debug_mode=False
     )
@@ -36,7 +36,7 @@ def go_back_to_main_menu() -> None:
       sleep(1)
       clear_terminal()
   clear_terminal()
-  print_mainmenu()
+  print_initial_message()
 
 def instruction() -> None:
     while True:
