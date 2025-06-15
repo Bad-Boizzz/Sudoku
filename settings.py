@@ -13,7 +13,7 @@ def clear():
 
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN"],
+        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
         default_lang="PL",
         postfix="pack",
         debug_mode=False
@@ -123,7 +123,7 @@ def interactive_settings_menu():
         print(lm.get("settings.title"))
         print(lm.get("settings.available_languages") + str(lm.all_languages) )
         print(lm.get("settings.current_language") + lm.current_language)
-        agrest=input("Do you want to change the settings? (y/N): ").strip().lower()
+        agrest=input(lm.get("settings.change_prompt")).strip().lower()
         if agrest != 'y':
             print(lm.get("settings.exit"))
             break

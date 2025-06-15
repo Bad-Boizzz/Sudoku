@@ -55,7 +55,7 @@
     "current_settings": "Current settings: ",
     "current_language": "Current language: ",
     "available_languages": "Available languages",
-    "change_prompt": "Do you want to change the settings?",
+    "change_prompt": "Do you want to change the settings? (y/N)",
     "exit": "Exiting the settings menu.",
     "enter_language": "Enter language prefix ",
     "invalid_language": "Language '{0}' is not available. Choose from: {1}",

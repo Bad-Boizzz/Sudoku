@@ -55,7 +55,7 @@
     "current_settings": "Aktualne ustawiynia: ",
     "current_language": "Aktualny jynzyk: ",
     "available_languages": "Dostympne jynzyki: ",
-    "change_prompt": "Chcesz zmiynić ustawiynia?",
+    "change_prompt": "Chcesz zmiynić ustawiynia? (y/N)",
     "exit": "Zamykům menu ustawiyniy.",
     "enter_language": "Podyj prefix jynzyka ",
     "invalid_language": "Jynzyk '{0}' niyma dostympny. Wybiyrz z: {1}",

@@ -1,8 +1,8 @@
 from language.LanguageManager import LanguageManager
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN", "PLSLASK"],
-        default_lang="PLSLASK",
+        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
+        default_lang="PL",
         postfix="pack",
         debug_mode=True
 )

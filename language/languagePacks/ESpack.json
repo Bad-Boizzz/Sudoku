@@ -51,7 +51,7 @@
     "current_settings": "Configuración actual: ",
     "current_language": "Idioma actual: ",
     "available_languages": "Idiomas disponibles",
-    "change_prompt": "¿Deseas cambiar la configuración?",
+    "change_prompt": "¿Deseas cambiar la configuración? (y/N)",
     "exit": "Cerrando el menú de configuración.",
     "enter_language": "Introduce el prefijo del idioma ",
     "invalid_language": "El idioma '{0}' no está disponible. Elige entre: {1}",

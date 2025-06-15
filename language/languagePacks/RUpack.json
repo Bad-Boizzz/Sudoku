@@ -55,7 +55,7 @@
     "current_settings": "Текущие настройки: ",
     "current_language": "Текущий язык: ",
     "available_languages": "Доступные языки",
-    "change_prompt": "Хотите изменить настройки?",
+    "change_prompt": "Хотите изменить настройки? (y/N)",
     "exit": "Выход из меню настроек.",
     "enter_language": "Введите префикс языка ",
     "invalid_language": "Язык '{0}' недоступен. Выберите из: {1}",
