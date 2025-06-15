@@ -49,5 +49,27 @@
     "chooseoption": "Escolha uma opção: ",
     "exitmessage": "Obrigado por jogar!",
     "wrongoption": "Opção incorreta, tente novamente."
-  }
+  },
+  "settings": {
+    "title": "Configurações",
+    "current_settings": "Configurações atuais: ",
+    "current_language": "Idioma atual: ",
+    "available_languages": "Idiomas disponíveis",
+    "change_prompt": "Deseja alterar as configurações? (y/N)",
+    "exit": "Saindo do menu de configurações.",
+    "enter_language": "Digite o prefixo do idioma ",
+    "invalid_language": "O idioma '{0}' não está disponível. Escolha entre: {1}",
+    "language_set": "Idioma definido para: ",
+    "color": "Cor do tabuleiro",
+    "level": "Nível de dificuldade",
+
+    "select_language": "Selecione o idioma:",
+    "enter_new_value": "Digite um novo valor para {key} (atualmente: {value}): ",
+    "language_not_found": "Idioma com o prefixo informado não encontrado.",
+    "no_languages": "Nenhum idioma disponível.",
+    "invalid_choice": "Escolha inválida, tente novamente.",
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil"
+}
 }

@@ -1,8 +1,8 @@
 from language.LanguageManager import LanguageManager
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN", "PLSLASK"],
-        default_lang="PLSLASK",
+        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
+        default_lang="PL",
         postfix="pack",
         debug_mode=True
 )
@@ -13,7 +13,7 @@ import game
 from time import sleep
 
 import settings
-# import settings
+
 import instruction
 
 
@@ -49,8 +49,8 @@ def print_mainmenu() -> int:
             
             #settings    
             case 3:
-                settings.main_settings()
                 clear()
+                settings.main_settings()
                 return -1
             
             #game exit
@@ -71,7 +71,7 @@ def print_mainmenu() -> int:
         sleep(1)
         clear()
         return 0
-        
+    clear()
 def main():
     while True:
         choice_result = print_mainmenu()

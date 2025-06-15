@@ -45,5 +45,27 @@
         "KillerCage2": "Die Zahl in der oberen Ecke des Käfigs zeigt die Zielsumme, die die Ziffern in diesem Käfig ergeben müssen.",
         "KillerCage3": "In jedem Käfig dürfen Ziffern nicht wiederholt werden.\n",
         "GoBackToMainMenuOption": "Zurück zum Hauptmenü"
+    },
+  "settings": {
+    "title": "Einstellungen",
+    "current_settings": "Aktuelle Einstellungen: ",
+    "current_language": "Aktuelle Sprache: ",
+    "available_languages": "Verfügbare Sprachen",
+    "change_prompt": "Möchten Sie die Einstellungen ändern?",
+    "exit": "Einstellungsmenü wird geschlossen.",
+    "enter_language": "Geben Sie das Sprachpräfix ein ",
+    "invalid_language": "Die Sprache '{0}' ist nicht verfügbar. Wählen Sie aus: {1}",
+    "language_set": "Sprache eingestellt auf: ",
+    "color": "Spielfeldfarbe",
+    "level": "Schwierigkeitsgrad",
+
+    "select_language": "Sprache auswählen:",
+    "enter_new_value": "Geben Sie einen neuen Wert für {key} ein (aktuell: {value}): ",
+    "language_not_found": "Keine Sprache mit dem angegebenen Präfix gefunden.",
+    "no_languages": "Keine verfügbaren Sprachen.",
+    "invalid_choice": "Ungültige Auswahl, bitte versuchen Sie es erneut.",
+    "easy": "Einfach",
+    "medium": "Mittel",
+    "hard": "Schwierig"
     }
 }
