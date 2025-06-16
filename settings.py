@@ -11,9 +11,10 @@ import time
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+all_languages = ["PL","EN", "PLSLASK","ES","PT","RU","DE"]
 lm = LanguageManager(
         languagePacks_path="language/languagePacks",
-        languages_prefixes=["PL","EN", "PLSLASK","ES","PT","RU","DE"],
+        languages_prefixes=all_languages,
         default_lang="PL",
         postfix="pack",
         debug_mode=False
@@ -121,20 +122,20 @@ def interactive_settings_menu():
     
     while True:
         print(lm.get("settings.title"))
-        print(lm.get("settings.available_languages") + str(lm.all_languages) )
-        print(lm.get("settings.current_language") + lm.current_language)
+        print(lm.get("settings.available_languages") + str(all_languages) )
+        print(lm.get("settings.current_language") + lm.current_lang)
         agrest=input(lm.get("settings.change_prompt")).strip().lower()
         if agrest != 'y':
             print(lm.get("settings.exit"))
             break
         agrest=input(lm.get("settings.enter_language")).strip().upper()
-        if agrest not in lm.all_languages:
-            print(lm.get("settings.invalid_language").format(agrest, lm.all_languages ))
+        if agrest not in all_languages:
+            print(lm.get("settings.invalid_language").format(agrest, all_languages ))
             time.sleep(3)
             clear()
             continue
         lm.set_language(agrest)
-        print(lm.get("settings.language_set") + lm.current_language)
+        print(lm.get("settings.language_set") + lm.current_lang)
         time.sleep(1)
         
         break
