@@ -5,7 +5,27 @@
         "exit_to_main_menu": "Return to main menu",
         "fill_cell": "Fill cell",
         "clear_cell": "Clear cell",
-        "get_hint": "Get hint"
+        "get_hint": "Get hint",
+        "easy_level": "Easy level",
+        "medium_level": "Medium level",
+        "hard_level": "Difficult level",
+        "expert_level": "Expert level",
+        "enter_row": "Enter the row number (1-9): ",
+        "enter_column": "Enter the column number (1-9): ",
+        "enter_number": "Enter the number.",
+        "enter_three_numbers": "Enter three numbers.",
+        "enter_numbers": "Enter numbers.",
+        "number_out_of_range": "Number out of range.",
+        "numbers_out_of_range": "Numbers out of range.",
+        "enter_value_for_cell": "Enter a value (1-9) into the cell",
+        "non_editable_cell": "This cell cannot be edited.",
+        "non_clearable_cell": "This cell cannot be cleared.",
+        "no_hint_cell": "This cell cannot be hinted.",
+        "hint_message": "HINT: in the $pos cell you can enter $value.",
+        "click_enter_to_continue": "Press Enter to continue...",
+        "exit_confirmation": "Are you sure you want to exit the game? (y/N): ",
+        "congratulations": "Congratulations! You have completed sudoku!",
+        "unfortunately": "Unfortunately, the solution is incorrect."
     },
     "mainmenu": 
     {   

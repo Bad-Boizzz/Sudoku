@@ -8,7 +8,23 @@
         "easy_level": "Snadny poziōm",
         "medium_level": "Postrzedni poziom",
         "hard_level": "Ciynżki poziōm",
-        "expert_level": "Ekspercki poziōm"
+        "expert_level": "Ekspercki poziōm",
+        "enter_row": "Podej numer wiersza (1-9): ",
+        "enter_column": "Podej numer kolōny (1-9): ",
+        "enter_number": "Podej numer.",
+        "enter_three_numbers": "Podej trzi liczby.",
+        "enter_numbers": "Podej liczby.",
+        "number_out_of_range": "Numer poza zakresem.",
+        "numbers_out_of_range": "Liczby poza zakresem.",
+        "enter_value_for_cell": "Podej wert (1-9) do kōmōrki",
+        "non_editable_cell": "Tyj kōmōrki niy idzie zeminiać.",
+        "non_clearable_cell": "Tyj kōmōrki niy idzie wypucować.",
+        "no_hint_cell": "Tyj kōmōrki niy idzie przepowiydzieć.",
+        "hint_message": "Przepowiydź: w kōmōrce $pos możesz wpisać $value.",
+        "click_enter_to_continue": "Naciś Ynter, coby kōntynuować...",
+        "exit_confirmation": "Eli na zicher chcesz wyjść ze szpilu? (y/N): ",
+        "congratulations": "Gratulacyje! Skōńczōłś sudoku!",
+        "unfortunately": "Niystety, rozwiōnzanie je niynŏleżne."
     },
     "mainmenu": 
     {   

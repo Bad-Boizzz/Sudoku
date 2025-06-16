@@ -28,6 +28,7 @@ def print_initial_message():
 
 def print_mainmenu() -> int:
     try:
+        clear()
         print("SUDOKU \n \n \n")
         print("1. " + lm.get("mainmenu.start"))
         print("2. " + lm.get("mainmenu.HowToPlay"))
