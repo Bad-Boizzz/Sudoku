@@ -323,7 +323,8 @@ def game():
 
         match choice:
             case 1:
-                exit_game()
+                if exit_game():
+                    break
             case 2:
                 is_modified = True
                 fill_cell(result_sudoku, blank_sudoku)
@@ -334,6 +335,9 @@ def game():
                 get_hint(blank_sudoku, sudoku_solution)
             case _:
                 continue
-        break
+
+    main.clear()
+    main.print_initial_message()
+
 if __name__ == "__main__":
     game()
