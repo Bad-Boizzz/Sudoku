@@ -1,5 +1,3 @@
-
-#!/usr/bin/env python3
 import json
 
 def escape_value(val: str) -> str:
@@ -48,7 +46,6 @@ def update_json_file(input_file:str, output_file:str)->None:
 
 if __name__ == "__main__":
     # Podaj tu ścieżki do plików:
-    input_file = "languagePacks/PLpack.json"
-    output_file = "languagePacks/PLSLASK2pack.json"
+    input_file = "languagePacks/SamplesForTesting/PLpack.json"
+    output_file = "languagePacks/SamplesForTesting/ENpack.json"
     update_json_file(input_file, output_file)
-
